@@ -205,7 +205,7 @@ public class CalculatorFrame extends JFrame{
         if(ae.getActionCommand()!="=")
             Calculations.addCommand(ae.getActionCommand());
         else
-            Calculations.returnResults();
+            Calculations.computeResults();
     }
 
     //Adding action listeners to all buttons

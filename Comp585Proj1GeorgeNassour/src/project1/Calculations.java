@@ -10,21 +10,36 @@ import java.util.Iterator;
 
 public class Calculations {
 
+    //Calculator acts as a queue
     private static ArrayDeque<String>calculatorQueue = new ArrayDeque<String>();
-    double number1, number2, result;
+
+    //Intermediary variables to calculate the expressions entered from GUI
+    private static double number1, number2, result;
+    private static String checkIfOperator;
+
     protected static void addCommand(String calculatorCommand){
         calculatorQueue.add(calculatorCommand);
     }
 
     protected  static void computeResults(){
-        Iterator i = calculatorQueue.iterator();
-        while(i.hasNext()){
-           if(i == "")
+        Iterator calcInputs = calculatorQueue.iterator();
+        while(calcInputs.hasNext()){
+           checkIfOperator = (String) calcInputs.next();
+           if(checkIfOperator == "+"){
+               number2 = Double.parseDouble((String) calcInputs.next());
+               result = number1 + number2;
+               number1 = result;
+           }
+           else
+               number1 = Double.parseDouble(checkIfOperator);
         }
+        returnResults();
     }
 
 
     private static void returnResults(){
-
+        if(Math.floor(result) == result){
+            System.out.println((int) result);
+        }
     }
 }
