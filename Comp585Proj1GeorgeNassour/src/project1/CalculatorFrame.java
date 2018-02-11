@@ -14,6 +14,7 @@
  *
  * Add more menu items
  */
+package project1;
 
 import javax.swing.JPanel;
 import javax.swing.JFrame;
@@ -84,6 +85,7 @@ public class CalculatorFrame extends JFrame{
 
     //Constructing the components of the calculator
     public CalculatorFrame(){
+        createKeyListener();
         initializeMainPanel();
         initializeButtons();
         initializeButtonPanel();
@@ -125,6 +127,9 @@ public class CalculatorFrame extends JFrame{
         divisionButton = new JButton("/");
         modButton = new JButton("%");
         equalButton = new JButton("=");
+        ActionListener listener = new ClickListener();
+        equalButton.addActionListener(listener);
+        multiplyButton.addActionListener(listener);
     }
 
     //Initialize the button panel and add all the calculator buttons to it
@@ -180,6 +185,7 @@ public class CalculatorFrame extends JFrame{
         keyListener = new KeyListener() {
             @Override
             public void keyTyped(KeyEvent ke) {
+
             }
 
             @Override
@@ -194,4 +200,9 @@ public class CalculatorFrame extends JFrame{
 
         };
     }
+
+    protected static void buttonClicked(ActionEvent ae){
+        System.out.println(ae.paramString());
+    }
+
 }

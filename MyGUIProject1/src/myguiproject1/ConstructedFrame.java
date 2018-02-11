@@ -31,7 +31,7 @@ public class  ConstructedFrame extends JFrame {
     private JTextField textField;
     private KeyListener keyListener;
     private JTextArea textArea;
-    
+
     private double balance;    
 
     private static final int ROWS = 10;
@@ -71,7 +71,7 @@ public class  ConstructedFrame extends JFrame {
             @Override
             public void keyPressed(KeyEvent ke) {
                 System.out.println("keyPressed: " + ke.getKeyCode());
-                handleKeyPressed(ke.getKeyCode());
+                //handleKeyPressed(ke.getKeyCode());
             }
 
             @Override

@@ -1,6 +1,7 @@
 /**
  * Created by Gaming on 2/4/2018.
  */
+package project1;
 
 import javax.swing.*;
 
