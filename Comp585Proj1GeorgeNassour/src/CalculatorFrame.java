@@ -1,9 +1,18 @@
 /**
  * Created by George Nassour on 2/5/2018.
  * Provides the frame for the calculator
- */
-/**
- * Goals: Get math operations to the right side of the calculator
+ *
+ * Changelog:
+ *
+ *
+ * Get math operations to the right side of the calculator
+ * Completed 2/8/2018
+ *
+ *
+ * Implement mouse and keyboard listeners
+ *
+ *
+ * Add more menu items
  */
 
 import javax.swing.JPanel;
@@ -14,7 +23,13 @@ import javax.swing.JScrollPane;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyListener;
+import java.awt.event.KeyEvent;
 
 
 public class CalculatorFrame extends JFrame{
@@ -29,9 +44,7 @@ public class CalculatorFrame extends JFrame{
 
     //Panels of the frame
     private JPanel calculatorPanel;
-    private JPanel operatorPanel;
     private JPanel numberPanel;
-    private JPanel tempPanel;
     private JPanel zeroPanel = new JPanel(new BorderLayout());
 
     //Text Area of result and history
@@ -43,6 +56,9 @@ public class CalculatorFrame extends JFrame{
     private JMenu help;
     private JMenuItem exit;
     private JMenuItem about;
+
+    //Listener objects
+    private KeyListener keyListener;
 
     //Calculator Buttons
     private JButton numberZeroButton;
@@ -64,8 +80,9 @@ public class CalculatorFrame extends JFrame{
     private JButton subtractButton;
     private JButton divisionButton;
     private JButton modButton;
+    private JButton equalButton;
 
-    //Constructor
+    //Constructing the components of the calculator
     public CalculatorFrame(){
         initializeMainPanel();
         initializeButtons();
@@ -83,7 +100,6 @@ public class CalculatorFrame extends JFrame{
 
     //Initializes the main panel of the calculator
     private void initializeMainPanel(){
-        tempPanel = new JPanel(new BorderLayout());
         calculatorPanel = new JPanel(new BorderLayout());
     }
 
@@ -102,47 +118,41 @@ public class CalculatorFrame extends JFrame{
         numberDecimalButton = new JButton(".");
         numberClearButton = new JButton("C");
         numberClearEntryButton = new JButton("CE");
-        numberBackSpace = new JButton("bksp");
+        numberBackSpace = new JButton("<-");
         addButton = new JButton("+");
         multiplyButton = new JButton("*");
         subtractButton = new JButton("-");
         divisionButton = new JButton("/");
         modButton = new JButton("%");
+        equalButton = new JButton("=");
     }
 
     //Initialize the button panel and add all the calculator buttons to it
     //Add to the south side of the main panel through border layout
     private void initializeButtonPanel(){
         numberPanel = new JPanel();
-        operatorPanel = new JPanel();
-        numberPanel.setLayout(new GridLayout(4,3,10,8));
-        operatorPanel.setLayout(new GridLayout(5,1,0,6));
-        //numberPanel.add(numberZeroButton);
-        numberPanel.add(numberDecimalButton);
-        numberPanel.add(numberClearButton);
-        numberPanel.add(numberClearEntryButton);
+        numberPanel.setLayout(new GridLayout(5,4,10,3));
         numberPanel.add(numberSevenButton);
         numberPanel.add(numberEightButton);
         numberPanel.add(numberNineButton);
+        numberPanel.add(addButton);
         numberPanel.add(numberFourButton);
         numberPanel.add(numberFiveButton);
         numberPanel.add(numberSixButton);
+        numberPanel.add(subtractButton);
         numberPanel.add(numberOneButton);
         numberPanel.add(numberTwoButton);
         numberPanel.add(numberThreeButton);
-        numberZeroButton.setPreferredSize(new Dimension(170,30));
-        zeroPanel.add(numberZeroButton, BorderLayout.WEST);
-        operatorPanel.add(addButton);
-        operatorPanel.add(multiplyButton);
-        operatorPanel.add(subtractButton);
-        operatorPanel.add(divisionButton);
-        operatorPanel.add(modButton);
-        tempPanel.add(numberPanel, BorderLayout.WEST);
-        tempPanel.add(operatorPanel, BorderLayout.EAST);
-        tempPanel.add(zeroPanel, BorderLayout.SOUTH);
-        calculatorPanel.add(tempPanel, BorderLayout.SOUTH);
-
-        //calculatorPanel.add(operatorPanel, BorderLayout.EAST);
+        numberPanel.add(multiplyButton);
+        numberPanel.add(numberDecimalButton);
+        numberPanel.add(numberZeroButton);
+        numberPanel.add(numberBackSpace);
+        numberPanel.add(divisionButton);
+        numberPanel.add(modButton);
+        numberPanel.add(numberClearButton);
+        numberPanel.add(numberClearEntryButton);
+        numberPanel.add(equalButton);
+        calculatorPanel.add(numberPanel, BorderLayout.SOUTH);
     }
 
     //Create a text area for the results of the operations
@@ -164,5 +174,24 @@ public class CalculatorFrame extends JFrame{
         help.add(about);
         menuBar.add(app);
         menuBar.add(help);
+    }
+
+    private void createKeyListener() {
+        keyListener = new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent ke) {
+            }
+
+            @Override
+            public void keyPressed(KeyEvent ke) {
+                System.out.println("keyPressed: " + ke.getKeyCode());
+
+            }
+
+            @Override
+            public void keyReleased(KeyEvent ke) {
+            }
+
+        };
     }
 }
