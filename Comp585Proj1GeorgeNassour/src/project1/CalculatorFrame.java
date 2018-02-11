@@ -24,6 +24,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import java.awt.Insets;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridLayout;
@@ -31,6 +32,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyListener;
 import java.awt.event.KeyEvent;
+
 
 
 public class CalculatorFrame extends JFrame{
@@ -46,7 +48,6 @@ public class CalculatorFrame extends JFrame{
     //Panels of the frame
     private JPanel calculatorPanel;
     private JPanel numberPanel;
-    private JPanel zeroPanel = new JPanel(new BorderLayout());
 
     //Text Area of result and history
     private JTextArea calcResults;
@@ -72,10 +73,10 @@ public class CalculatorFrame extends JFrame{
     private JButton numberSevenButton;
     private JButton numberEightButton;
     private JButton numberNineButton;
-    private JButton numberDecimalButton;
-    private JButton numberClearButton;
-    private JButton numberClearEntryButton;
-    private JButton numberBackSpace;
+    private JButton decimalButton;
+    private JButton clearButton;
+    private JButton squareButton;
+    private JButton backSpace;
     private JButton addButton;
     private JButton multiplyButton;
     private JButton subtractButton;
@@ -91,6 +92,7 @@ public class CalculatorFrame extends JFrame{
         initializeButtonPanel();
         initializeTextArea();
         initializeMenuBar();
+        addActionListeners();
         createFrame();
         setSize(WINDOW_FRAME_WIDTH, WINDOW_FRAME_HEIGHT);
     }
@@ -117,19 +119,17 @@ public class CalculatorFrame extends JFrame{
         numberSevenButton = new JButton("7");
         numberEightButton = new JButton("8");
         numberNineButton = new JButton("9");
-        numberDecimalButton = new JButton(".");
-        numberClearButton = new JButton("C");
-        numberClearEntryButton = new JButton("CE");
-        numberBackSpace = new JButton("<-");
+        decimalButton = new JButton(".");
+        clearButton = new JButton("C");
+        squareButton = new JButton("x^2");
+        squareButton.setMargin(new Insets(0,0,0,0));
+        backSpace = new JButton("<-");
         addButton = new JButton("+");
         multiplyButton = new JButton("*");
         subtractButton = new JButton("-");
         divisionButton = new JButton("/");
         modButton = new JButton("%");
         equalButton = new JButton("=");
-        ActionListener listener = new ClickListener();
-        equalButton.addActionListener(listener);
-        multiplyButton.addActionListener(listener);
     }
 
     //Initialize the button panel and add all the calculator buttons to it
@@ -149,13 +149,13 @@ public class CalculatorFrame extends JFrame{
         numberPanel.add(numberTwoButton);
         numberPanel.add(numberThreeButton);
         numberPanel.add(multiplyButton);
-        numberPanel.add(numberDecimalButton);
+        numberPanel.add(decimalButton);
         numberPanel.add(numberZeroButton);
-        numberPanel.add(numberBackSpace);
+        numberPanel.add(backSpace);
         numberPanel.add(divisionButton);
         numberPanel.add(modButton);
-        numberPanel.add(numberClearButton);
-        numberPanel.add(numberClearEntryButton);
+        numberPanel.add(clearButton);
+        numberPanel.add(squareButton);
         numberPanel.add(equalButton);
         calculatorPanel.add(numberPanel, BorderLayout.SOUTH);
     }
@@ -181,6 +181,7 @@ public class CalculatorFrame extends JFrame{
         menuBar.add(help);
     }
 
+    //Key listener to look for actions on the keyboard
     private void createKeyListener() {
         keyListener = new KeyListener() {
             @Override
@@ -191,7 +192,6 @@ public class CalculatorFrame extends JFrame{
             @Override
             public void keyPressed(KeyEvent ke) {
                 System.out.println("keyPressed: " + ke.getKeyCode());
-
             }
 
             @Override
@@ -202,7 +202,34 @@ public class CalculatorFrame extends JFrame{
     }
 
     protected static void buttonClicked(ActionEvent ae){
-        System.out.println(ae.paramString());
+        if(ae.getActionCommand()!="=")
+            Calculations.addCommand(ae.getActionCommand());
+        else
+            Calculations.returnResults();
     }
 
+    //Adding action listeners to all buttons
+    private void addActionListeners(){
+        ActionListener listener = new ClickListener();
+        numberZeroButton.addActionListener(listener);
+        numberOneButton.addActionListener(listener);
+        numberTwoButton.addActionListener(listener);
+        numberThreeButton.addActionListener(listener);
+        numberFourButton.addActionListener(listener);
+        numberFiveButton.addActionListener(listener);
+        numberSixButton.addActionListener(listener);
+        numberSevenButton.addActionListener(listener);
+        numberEightButton.addActionListener(listener);
+        numberNineButton.addActionListener(listener);
+        decimalButton.addActionListener(listener);
+        clearButton.addActionListener(listener);
+        squareButton.addActionListener(listener);
+        backSpace.addActionListener(listener);
+        addButton.addActionListener(listener);
+        multiplyButton.addActionListener(listener);
+        subtractButton.addActionListener(listener);
+        divisionButton.addActionListener(listener);
+        modButton.addActionListener(listener);
+        equalButton.addActionListener(listener);
+    }
 }
