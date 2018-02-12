@@ -13,20 +13,20 @@ public class Calculations {
 
     //Calculator acts as a queue
     private static ArrayDeque<String>calculatorQueue = new ArrayDeque<String>();
-    //The GUI copy to reproduce on the text area
-    private static ArrayDeque<String>calculatorQueueGUI;
 
     //Intermediary variables to calculate the expressions entered from GUI
     private static String number1="", number2="";
     private static String operator="";
     private static double result = 0;
 
+    //Check if there are multiple operators in the user input
+    private static boolean multipleOperators = false;
+
 
     //Add commands to the queue
     protected static void addCommand(String calculatorCommand){calculatorQueue.add(calculatorCommand);}
 
     protected static void computeResults(){
-        calculatorQueueGUI = calculatorQueue;
         while(!calculatorQueue.isEmpty()){
             if(calculatorQueue.peek().equals("+")||calculatorQueue.peek().equals("-")||calculatorQueue.peek().equals("*")||calculatorQueue.peek().equals("/")||calculatorQueue.peek().equals("%")){
                 operator = calculatorQueue.pop();
@@ -34,23 +34,50 @@ public class Calculations {
                     while(!calculatorQueue.isEmpty()){
                         try{
                         if(calculatorQueue.peek().equals("+")||calculatorQueue.peek().equals("-")||calculatorQueue.peek().equals("*")||calculatorQueue.peek().equals("/")||calculatorQueue.peek().equals("%")){
+                            if(multipleOperators){
+                                operator = calculatorQueue.pop();
+                                number2 = calculatorQueue.pop();
+                            }
                             switch(operator){
                                 case "+":
                                     result = Double.parseDouble(number1) + Double.parseDouble(number2);
                                     number1 = String.valueOf(result);
                                     number2 = "";
+                                    if(!multipleOperators){
+                                        multipleOperators = true;
+                                    }
                                     break;
                                 case "-":
                                     result = Double.parseDouble(number1) - Double.parseDouble(number2);
+                                    number1 = String.valueOf(result);
+                                    number2 = "";
+                                    if(!multipleOperators){
+                                        multipleOperators = true;
+                                    }
                                     break;
                                 case "*":
                                     result = Double.parseDouble(number1) * Double.parseDouble(number2);
+                                    number1 = String.valueOf(result);
+                                    number2 = "";
+                                    if(!multipleOperators){
+                                        multipleOperators = true;
+                                    }
                                     break;
                                 case "/":
                                     result = Double.parseDouble(number1) / Double.parseDouble(number2);
+                                    number1 = String.valueOf(result);
+                                    number2 = "";
+                                    if(!multipleOperators){
+                                        multipleOperators = true;
+                                    }
                                     break;
                                 case "%":
                                     result = Double.parseDouble(number1) % Double.parseDouble(number2);
+                                    number1 = String.valueOf(result);
+                                    number2 = "";
+                                    if(!multipleOperators){
+                                        multipleOperators = true;
+                                    }
                                     break;
                             }
                         }
@@ -60,6 +87,7 @@ public class Calculations {
                         }
                         else
                             number2 += calculatorQueue.pop();
+
                     }catch(NumberFormatException nfe){
                             JOptionPane.showMessageDialog(null, "Input a valid sequence to compute.");
                             resetVariables();
@@ -93,7 +121,6 @@ public class Calculations {
     }
     private static void resetVariables(){
         calculatorQueue.clear();
-        calculatorQueueGUI.clear();
         number1 = number2 = "";
         result = 0;
     }
