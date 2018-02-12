@@ -202,10 +202,13 @@ public class CalculatorFrame extends JFrame{
     }
 
     protected static void buttonClicked(ActionEvent ae){
-        if(ae.getActionCommand()!="=")
+
+        if(ae.getActionCommand().equals("=")){
             Calculations.addCommand(ae.getActionCommand());
-        else
             Calculations.computeResults();
+        }
+        else
+            Calculations.addCommand(ae.getActionCommand());
     }
 
     //Adding action listeners to all buttons
