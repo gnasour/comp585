@@ -24,7 +24,21 @@ public class Calculations {
 
 
     //Add commands to the queue
-    protected static void addCommand(String calculatorCommand){calculatorQueue.add(calculatorCommand);}
+    protected static void addCommand(String calculatorCommand){
+        if(calculatorCommand.equals("C")){
+            resetVariables();
+            CalculatorFrame.resetLine();
+        }else if(calculatorCommand.equals("<-")){
+            if(!(calculatorQueue.peek().equals("+")||calculatorQueue.peek().equals("-")||calculatorQueue.peek().equals("*")||calculatorQueue.peek().equals("/")||calculatorQueue.peek().equals("%"))){
+                calculatorQueue.pop();
+            }
+        }else if(calculatorCommand.equals("x^2")){
+            result = Math.pow(result, 2);
+            returnResults();
+        }
+
+        calculatorQueue.add(calculatorCommand);
+    }
 
     protected static void computeResults(){
         while(!calculatorQueue.isEmpty()){
@@ -82,26 +96,53 @@ public class Calculations {
                             }
                         }
                         else if(calculatorQueue.peek().equals("=")){
-                            result += Double.parseDouble(number1) + Double.parseDouble(number2);
-                            returnResults();
+                            if(multipleOperators){
+                                returnResults();
+                            }else {
+                                switch(operator){
+                                    case "+":
+                                        result = Double.parseDouble(number1) + Double.parseDouble(number2);
+                                        returnResults();
+                                        break;
+                                    case "-":
+                                        result = Double.parseDouble(number1) - Double.parseDouble(number2);
+                                        returnResults();
+                                        break;
+                                    case "*":
+                                        result = Double.parseDouble(number1) * Double.parseDouble(number2);
+                                        returnResults();
+                                        break;
+                                    case "/":
+                                        result = Double.parseDouble(number1) / Double.parseDouble(number2);
+                                        returnResults();
+                                        break;
+                                    case "%":
+                                        result = Double.parseDouble(number1) % Double.parseDouble(number2);
+                                        returnResults();
+                                        break;
+                                }
+                            }
                         }
                         else
                             number2 += calculatorQueue.pop();
 
                     }catch(NumberFormatException nfe){
                             JOptionPane.showMessageDialog(null, "Input a valid sequence to compute.");
+                            CalculatorFrame.resetGUI();
                             resetVariables();
                         }
                     }
 
-                }else{
-                    JOptionPane.showMessageDialog(null, "Enter a valid number after the operator");
                 }
 
             }
             else if(calculatorQueue.peek().equals("=")){
-                result = Double.parseDouble(number1);
-                returnResults();
+                try {
+                    result = Double.parseDouble(number1);
+                    returnResults();
+                }catch (NumberFormatException nfe){
+                    JOptionPane.showMessageDialog(null, "Enter a valid sequence to compute");
+                }
             }
             else
                 number1 += calculatorQueue.pop();
@@ -114,9 +155,9 @@ public class Calculations {
     private static void returnResults(){
         if(Math.floor(result) == result){
             System.out.println((int) result);
-        }
+        }else
+            System.out.println(result);
         calculatorQueue.clear();
-        result = 0;
         number1 = number2 ="";
     }
     private static void resetVariables(){

@@ -50,7 +50,7 @@ public class CalculatorFrame extends JFrame{
     private JPanel numberPanel;
 
     //Text Area of result and history
-    private JTextArea calcResults;
+    private static JTextArea calcResults;
 
     //Menu bar
     private JMenuBar menuBar;
@@ -234,5 +234,13 @@ public class CalculatorFrame extends JFrame{
         divisionButton.addActionListener(listener);
         modButton.addActionListener(listener);
         equalButton.addActionListener(listener);
+    }
+
+    protected static void resetLine(){
+
+    }
+
+    protected static void resetGUI(){
+        calcResults.setText("");
     }
 }
