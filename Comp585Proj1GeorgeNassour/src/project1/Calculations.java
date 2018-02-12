@@ -4,10 +4,9 @@ package project1;
  * Created by Gaming on 2/11/2018.
  * Handles the calculations input by the user and when "=" is pressed, returns the result to be printed by the text area
  */
-import javax.swing.*;
+import javax.swing.JOptionPane;
 import java.lang.Math;
 import java.util.ArrayDeque;
-import javax.swing.JOptionPane;
 
 public class Calculations {
 
@@ -27,7 +26,7 @@ public class Calculations {
     protected static void addCommand(String calculatorCommand){
         if(calculatorCommand.equals("C")){
             resetVariables();
-            CalculatorFrame.resetLine();
+            CalculatorFrame.resetGUI();
         }else if(calculatorCommand.equals("<-")){
             if(!(calculatorQueue.peek().equals("+")||calculatorQueue.peek().equals("-")||calculatorQueue.peek().equals("*")||calculatorQueue.peek().equals("/")||calculatorQueue.peek().equals("%"))){
                 calculatorQueue.pop();
@@ -35,12 +34,11 @@ public class Calculations {
         }else if(calculatorCommand.equals("x^2")){
             result = Math.pow(result, 2);
             returnResults();
-        }
-
-        calculatorQueue.add(calculatorCommand);
+        }else
+            calculatorQueue.add(calculatorCommand);
     }
 
-    protected static void computeResults(){
+    protected static Number computeResults(){
         while(!calculatorQueue.isEmpty()){
             if(calculatorQueue.peek().equals("+")||calculatorQueue.peek().equals("-")||calculatorQueue.peek().equals("*")||calculatorQueue.peek().equals("/")||calculatorQueue.peek().equals("%")){
                 operator = calculatorQueue.pop();
@@ -113,8 +111,14 @@ public class Calculations {
                                         returnResults();
                                         break;
                                     case "/":
-                                        result = Double.parseDouble(number1) / Double.parseDouble(number2);
-                                        returnResults();
+                                        if(number2.equals("0")){
+                                            JOptionPane.showMessageDialog(null, "Divide by Zero. ERROR! DOES NOT COMPUTE!", "Divide by Zero", JOptionPane.ERROR_MESSAGE);
+                                            calculatorQueue.clear();
+                                        }
+                                        else {
+                                            result = Double.parseDouble(number1) / Double.parseDouble(number2);
+                                            returnResults();
+                                        }
                                         break;
                                     case "%":
                                         result = Double.parseDouble(number1) % Double.parseDouble(number2);
@@ -142,24 +146,27 @@ public class Calculations {
                     returnResults();
                 }catch (NumberFormatException nfe){
                     JOptionPane.showMessageDialog(null, "Enter a valid sequence to compute");
+                    calculatorQueue.clear();
                 }
             }
             else
                 number1 += calculatorQueue.pop();
         }
+        return returnResults();
     }
 
 
 
     //Returning the results and clearing the variables
-    private static void returnResults(){
+    private static Number returnResults(){
         if(Math.floor(result) == result){
-            System.out.println((int) result);
-        }else
-            System.out.println(result);
+            result = (int) result;
+        }
         calculatorQueue.clear();
         number1 = number2 ="";
+        return result;
     }
+
     private static void resetVariables(){
         calculatorQueue.clear();
         number1 = number2 = "";

@@ -10,7 +10,9 @@
  *
  *
  * Implement mouse and keyboard listeners
+ * Completed 2/11/2018
  *
+ * Correctly put results on screen
  *
  * Add more menu items
  */
@@ -97,6 +99,7 @@ public class CalculatorFrame extends JFrame{
         setSize(WINDOW_FRAME_WIDTH, WINDOW_FRAME_HEIGHT);
     }
 
+    //builds the main frame of the calculator
     private void createFrame(){
         setJMenuBar(menuBar);
         add(calculatorPanel);
@@ -181,6 +184,11 @@ public class CalculatorFrame extends JFrame{
         menuBar.add(help);
     }
 
+    private static void updateTextArea(String text){
+        if(!text.equals("C"))
+        calcResults.append(text + " ");
+    }
+
     //Key listener to look for actions on the keyboard
     private void createKeyListener() {
         keyListener = new KeyListener() {
@@ -204,11 +212,17 @@ public class CalculatorFrame extends JFrame{
     protected static void buttonClicked(ActionEvent ae){
 
         if(ae.getActionCommand().equals("=")){
-            Calculations.addCommand(ae.getActionCommand());
-            Calculations.computeResults();
+            Calculations.addCommand("=");
+            updateTextArea("=");
+            updateTextArea(String.valueOf(Calculations.computeResults()));
+            updateTextArea("\n");
+
         }
-        else
+        else {
             Calculations.addCommand(ae.getActionCommand());
+            updateTextArea(ae.getActionCommand());
+        }
+
     }
 
     //Adding action listeners to all buttons
