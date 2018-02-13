@@ -65,6 +65,9 @@ public class CalculatorFrame extends JFrame{
     private KeyListener keyListener;
     private ActionListener actionListener;
 
+    //Stores the ASCII representation of the character typed
+    private static int asciiKeyTyped=0;
+
     //Calculator Buttons
     private JButton numberZeroButton;
     private JButton numberOneButton;
@@ -216,8 +219,15 @@ public class CalculatorFrame extends JFrame{
         };
     }
 
+    //Checks values in ASCII to check if they are legal inputs to the calculator
     private void checkValidInput(char keyTyped){
-        System.out.println(keyTyped);
+        asciiKeyTyped = (int)keyTyped;
+        //If the char typed is "="
+        if(asciiKeyTyped == 61){
+            updateTextArea("=");
+        }else if(asciiKeyTyped == 37){
+            updateTextArea("%");
+        }
 
     }
 
