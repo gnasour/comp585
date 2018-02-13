@@ -1,5 +1,7 @@
 /**
  * Created by George Nassour on 2/5/2018.
+ * Comp 585 GUI
+ * Sevak Asadorian
  * Provides the frame for the calculator
  *
  * Changelog:
@@ -26,6 +28,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import javax.swing.WindowConstants;
 import java.awt.Insets;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -101,6 +104,10 @@ public class CalculatorFrame extends JFrame{
         addActionListeners();
         createFrame();
         setSize(WINDOW_FRAME_WIDTH, WINDOW_FRAME_HEIGHT);
+        setTitle("Calculator");
+        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        setVisible(true);
+        setResizable(false);
     }
 
     //builds the main frame of the calculator

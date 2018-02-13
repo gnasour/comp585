@@ -2,7 +2,9 @@ package project1;
 
 /*
  * Created by George Nassour on 2/11/2018.
- * Handles the calculations input by the user and when "=" is pressed, returns the result to be printed by the text area
+ * Comp 585 GUI
+ * Sevak Asadorian
+ * Handles the calculations input by the user and when "=" is pressed, returns the result to be printed on the text area
  */
 import javax.swing.JOptionPane;
 import java.lang.Math;

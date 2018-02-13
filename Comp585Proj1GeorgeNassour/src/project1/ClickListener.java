@@ -4,7 +4,10 @@ import java.awt.event.ActionEvent;
 
 
 /**
- * Created by Gaming on 2/5/2018.
+ * Created by George Nassour on 2/5/2018.
+ * Comp 585 GUI
+ * Sevak Asadorian
+ * Implementation of Action Listener that has the method call a static method in calculator frame to respond to the input
  */
 public class ClickListener implements ActionListener{
 
