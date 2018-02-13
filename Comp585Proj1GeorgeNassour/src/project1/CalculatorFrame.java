@@ -20,15 +20,7 @@
  */
 package project1;
 
-import javax.swing.JPanel;
-import javax.swing.JFrame;
-import javax.swing.JTextArea;
-import javax.swing.JButton;
-import javax.swing.JScrollPane;
-import javax.swing.JMenuBar;
-import javax.swing.JMenu;
-import javax.swing.JMenuItem;
-import javax.swing.WindowConstants;
+import javax.swing.*;
 import java.awt.Insets;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -189,11 +181,26 @@ public class CalculatorFrame extends JFrame{
         help = new JMenu("Help");
         exit = new JMenuItem("Exit");
         about = new JMenuItem("About");
+        exit.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+            }
+        });
+        about.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                showAboutMessage();
+            }
+        });
         app.add(exit);
         help.add(about);
         menuBar.add(app);
         menuBar.add(help);
     }
+
+    private void showAboutMessage(){JOptionPane.showMessageDialog(this, "Calculator App with less features " +
+            "than your system's calculator.");}
 
     private static void updateTextArea(String text){
         if(text.equals("=")){
