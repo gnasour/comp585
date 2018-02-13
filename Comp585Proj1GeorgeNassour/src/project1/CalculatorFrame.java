@@ -63,6 +63,7 @@ public class CalculatorFrame extends JFrame{
 
     //Listener objects
     private KeyListener keyListener;
+    private ActionListener actionListener;
 
     //Calculator Buttons
     private JButton numberZeroButton;
@@ -185,8 +186,14 @@ public class CalculatorFrame extends JFrame{
     }
 
     private static void updateTextArea(String text){
-        if(!text.equals("C"))
-        calcResults.append(text + " ");
+        if(text.equals("=")){
+            Calculations.addCommand("=");
+            calcResults.append("= ");
+            calcResults.append(String.valueOf(Calculations.computeResults()));
+            calcResults.append("\n");
+        }
+        else if(!text.equals("C"))
+            calcResults.append(text + " ");
     }
 
     //Key listener to look for actions on the keyboard
@@ -194,12 +201,12 @@ public class CalculatorFrame extends JFrame{
         keyListener = new KeyListener() {
             @Override
             public void keyTyped(KeyEvent ke) {
-
+                checkValidInput(ke.getKeyChar());
             }
 
             @Override
             public void keyPressed(KeyEvent ke) {
-                System.out.println("keyPressed: " + ke.getKeyCode());
+
             }
 
             @Override
@@ -209,14 +216,15 @@ public class CalculatorFrame extends JFrame{
         };
     }
 
+    private void checkValidInput(char keyTyped){
+        System.out.println(keyTyped);
+
+    }
+
     protected static void buttonClicked(ActionEvent ae){
 
         if(ae.getActionCommand().equals("=")){
-            Calculations.addCommand("=");
             updateTextArea("=");
-            updateTextArea(String.valueOf(Calculations.computeResults()));
-            updateTextArea("\n");
-
         }
         else {
             Calculations.addCommand(ae.getActionCommand());
@@ -225,33 +233,31 @@ public class CalculatorFrame extends JFrame{
 
     }
 
+
     //Adding action listeners to all buttons
     private void addActionListeners(){
-        ActionListener listener = new ClickListener();
-        numberZeroButton.addActionListener(listener);
-        numberOneButton.addActionListener(listener);
-        numberTwoButton.addActionListener(listener);
-        numberThreeButton.addActionListener(listener);
-        numberFourButton.addActionListener(listener);
-        numberFiveButton.addActionListener(listener);
-        numberSixButton.addActionListener(listener);
-        numberSevenButton.addActionListener(listener);
-        numberEightButton.addActionListener(listener);
-        numberNineButton.addActionListener(listener);
-        decimalButton.addActionListener(listener);
-        clearButton.addActionListener(listener);
-        squareButton.addActionListener(listener);
-        backSpace.addActionListener(listener);
-        addButton.addActionListener(listener);
-        multiplyButton.addActionListener(listener);
-        subtractButton.addActionListener(listener);
-        divisionButton.addActionListener(listener);
-        modButton.addActionListener(listener);
-        equalButton.addActionListener(listener);
-    }
-
-    protected static void resetLine(){
-
+        actionListener = new ClickListener();
+        numberZeroButton.addActionListener(actionListener);
+        numberOneButton.addActionListener(actionListener);
+        numberTwoButton.addActionListener(actionListener);
+        numberThreeButton.addActionListener(actionListener);
+        numberFourButton.addActionListener(actionListener);
+        numberFiveButton.addActionListener(actionListener);
+        numberSixButton.addActionListener(actionListener);
+        numberSevenButton.addActionListener(actionListener);
+        numberEightButton.addActionListener(actionListener);
+        numberNineButton.addActionListener(actionListener);
+        decimalButton.addActionListener(actionListener);
+        clearButton.addActionListener(actionListener);
+        squareButton.addActionListener(actionListener);
+        backSpace.addActionListener(actionListener);
+        addButton.addActionListener(actionListener);
+        multiplyButton.addActionListener(actionListener);
+        subtractButton.addActionListener(actionListener);
+        divisionButton.addActionListener(actionListener);
+        modButton.addActionListener(actionListener);
+        equalButton.addActionListener(actionListener);
+        calcResults.addKeyListener(keyListener);
     }
 
     protected static void resetGUI(){

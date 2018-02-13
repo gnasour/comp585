@@ -1,7 +1,7 @@
 package project1;
 
 /*
- * Created by Gaming on 2/11/2018.
+ * Created by George Nassour on 2/11/2018.
  * Handles the calculations input by the user and when "=" is pressed, returns the result to be printed by the text area
  */
 import javax.swing.JOptionPane;
@@ -17,6 +17,8 @@ public class Calculations {
     private static String number1="", number2="";
     private static String operator="";
     private static double result = 0;
+    //In case for functions that require the results from previous computations
+    private static double backupResults = 0;
 
     //Check if there are multiple operators in the user input
     private static boolean multipleOperators = false;
@@ -28,10 +30,17 @@ public class Calculations {
             resetVariables();
             CalculatorFrame.resetGUI();
         }else if(calculatorCommand.equals("<-")){
-            if(!(calculatorQueue.peek().equals("+")||calculatorQueue.peek().equals("-")||calculatorQueue.peek().equals("*")||calculatorQueue.peek().equals("/")||calculatorQueue.peek().equals("%"))){
-                calculatorQueue.pop();
+            try {
+                if(!(calculatorQueue.peek().equals("+")||calculatorQueue.peek().equals("-")||calculatorQueue.peek().equals("*")||calculatorQueue.peek().equals("/")||calculatorQueue.peek().equals("%"))){
+
+                    calculatorQueue.pop();
+
+                }
+            }catch(NullPointerException npe){
+                System.out.println("The stack was empty when deleting a command");
             }
         }else if(calculatorCommand.equals("x^2")){
+            result = backupResults;
             result = Math.pow(result, 2);
             returnResults();
         }else
@@ -48,7 +57,8 @@ public class Calculations {
                         if(calculatorQueue.peek().equals("+")||calculatorQueue.peek().equals("-")||calculatorQueue.peek().equals("*")||calculatorQueue.peek().equals("/")||calculatorQueue.peek().equals("%")){
                             if(multipleOperators){
                                 operator = calculatorQueue.pop();
-                                number2 = calculatorQueue.pop();
+                                while(!(calculatorQueue.peek().equals("+")||calculatorQueue.peek().equals("-")||calculatorQueue.peek().equals("*")||calculatorQueue.peek().equals("/")||calculatorQueue.peek().equals("%")||calculatorQueue.peek().equals("=")))
+                                    number2 += calculatorQueue.pop();
                             }
                             switch(operator){
                                 case "+":
@@ -76,11 +86,16 @@ public class Calculations {
                                     }
                                     break;
                                 case "/":
-                                    result = Double.parseDouble(number1) / Double.parseDouble(number2);
-                                    number1 = String.valueOf(result);
-                                    number2 = "";
-                                    if(!multipleOperators){
-                                        multipleOperators = true;
+                                    if(number2.equals("0")){
+                                        JOptionPane.showMessageDialog(null, "Divide by Zero. ERROR! DOES NOT COMPUTE!", "Divide by Zero", JOptionPane.ERROR_MESSAGE);
+                                        resetVariables();
+                                    }else{
+                                        result = Double.parseDouble(number1) / Double.parseDouble(number2);
+                                        number1 = String.valueOf(result);
+                                        number2 = "";
+                                        if(!multipleOperators){
+                                            multipleOperators = true;
+                                        }
                                     }
                                     break;
                                 case "%":
@@ -95,34 +110,34 @@ public class Calculations {
                         }
                         else if(calculatorQueue.peek().equals("=")){
                             if(multipleOperators){
-                                returnResults();
+                                calculatorQueue.clear();
                             }else {
                                 switch(operator){
                                     case "+":
                                         result = Double.parseDouble(number1) + Double.parseDouble(number2);
-                                        returnResults();
+                                        calculatorQueue.clear();
                                         break;
                                     case "-":
                                         result = Double.parseDouble(number1) - Double.parseDouble(number2);
-                                        returnResults();
+                                        calculatorQueue.clear();
                                         break;
                                     case "*":
                                         result = Double.parseDouble(number1) * Double.parseDouble(number2);
-                                        returnResults();
+                                        calculatorQueue.clear();
                                         break;
                                     case "/":
                                         if(number2.equals("0")){
                                             JOptionPane.showMessageDialog(null, "Divide by Zero. ERROR! DOES NOT COMPUTE!", "Divide by Zero", JOptionPane.ERROR_MESSAGE);
-                                            calculatorQueue.clear();
+                                            resetVariables();
                                         }
                                         else {
                                             result = Double.parseDouble(number1) / Double.parseDouble(number2);
-                                            returnResults();
+                                            calculatorQueue.clear();
                                         }
                                         break;
                                     case "%":
                                         result = Double.parseDouble(number1) % Double.parseDouble(number2);
-                                        returnResults();
+                                        calculatorQueue.clear();
                                         break;
                                 }
                             }
@@ -132,8 +147,8 @@ public class Calculations {
 
                     }catch(NumberFormatException nfe){
                             JOptionPane.showMessageDialog(null, "Input a valid sequence to compute.");
-                            CalculatorFrame.resetGUI();
                             resetVariables();
+                            CalculatorFrame.resetGUI();
                         }
                     }
 
@@ -143,7 +158,7 @@ public class Calculations {
             else if(calculatorQueue.peek().equals("=")){
                 try {
                     result = Double.parseDouble(number1);
-                    returnResults();
+                    calculatorQueue.clear();
                 }catch (NumberFormatException nfe){
                     JOptionPane.showMessageDialog(null, "Enter a valid sequence to compute");
                     calculatorQueue.clear();
@@ -162,14 +177,16 @@ public class Calculations {
         if(Math.floor(result) == result){
             result = (int) result;
         }
-        calculatorQueue.clear();
-        number1 = number2 ="";
-        return result;
+        backupResults = result;
+        resetVariables();
+        return backupResults;
     }
 
     private static void resetVariables(){
         calculatorQueue.clear();
         number1 = number2 = "";
+        operator = "";
         result = 0;
+        multipleOperators = false;
     }
 }
