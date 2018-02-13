@@ -195,8 +195,10 @@ public class CalculatorFrame extends JFrame{
             calcResults.append(String.valueOf(Calculations.computeResults()));
             calcResults.append("\n");
         }
-        else if(!text.equals("C"))
+        else if(!text.equals("C")){
+            Calculations.addCommand(text);
             calcResults.append(text + " ");
+        }
     }
 
     //Key listener to look for actions on the keyboard
@@ -204,6 +206,7 @@ public class CalculatorFrame extends JFrame{
         keyListener = new KeyListener() {
             @Override
             public void keyTyped(KeyEvent ke) {
+                System.out.print((int)ke.getKeyChar());
                 checkValidInput(ke.getKeyChar());
             }
 
@@ -223,10 +226,12 @@ public class CalculatorFrame extends JFrame{
     private void checkValidInput(char keyTyped){
         asciiKeyTyped = (int)keyTyped;
         //If the char typed is "="
-        if(asciiKeyTyped == 61){
+        if(asciiKeyTyped == 61 || asciiKeyTyped == 10){
             updateTextArea("=");
-        }else if(asciiKeyTyped == 37){
+        }else if(asciiKeyTyped == 37){//Modulo key pressed
             updateTextArea("%");
+        }else if(asciiKeyTyped >= 42 && asciiKeyTyped <= 57 && asciiKeyTyped != 44){//All numbers and operators excluding the comma
+            updateTextArea(String.valueOf(keyTyped));
         }
 
     }
@@ -237,7 +242,6 @@ public class CalculatorFrame extends JFrame{
             updateTextArea("=");
         }
         else {
-            Calculations.addCommand(ae.getActionCommand());
             updateTextArea(ae.getActionCommand());
         }
 
