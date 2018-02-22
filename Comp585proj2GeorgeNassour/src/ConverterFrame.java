@@ -55,8 +55,9 @@ class ConverterFrame extends JFrame {
     //Initialize the basic components with values
     private void initComponenets(){
         buildDesktop();
-        initPanel();
         initTree();
+        initMenu();
+        initPanel();
         buildFrame();
     }
 
@@ -69,6 +70,18 @@ class ConverterFrame extends JFrame {
         root.add(math);
         treeModel = new DefaultTreeModel(root);
         tree = new JTree(treeModel);
+    }
+
+    private void initMenu() {
+        menuBar = new JMenuBar();
+        app = new JMenu("App");
+        help = new JMenu("Help");
+        exit = new JMenuItem("Exit");
+        about = new JMenuItem("About");
+        app.add(exit);
+        help.add(about);
+        menuBar.add(app);
+        menuBar.add(help);
     }
 
     private void initPanel(){
