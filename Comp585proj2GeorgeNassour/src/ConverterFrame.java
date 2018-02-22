@@ -54,8 +54,10 @@ class ConverterFrame extends JFrame {
 
     //Initialize the basic components with values
     private void initComponenets(){
+        buildDesktop();
         initPanel();
         initTree();
+        buildFrame();
     }
 
     //Initialize the tree nodes and add them to a tree
@@ -93,6 +95,32 @@ class ConverterFrame extends JFrame {
 
         labelPanel.setLayout(new BorderLayout());
         labelPanel.add(statusLabel, BorderLayout.CENTER);
+    }
+
+    private void buildDesktop() {
+        desktop = new JDesktopPane() {
+            @Override
+            protected void paintComponent(Graphics g) {
+                ImageIcon imageIcon = new ImageIcon("../images/csun_logo.png");
+                Image image = imageIcon.getImage();
+
+                int x=0;
+                int y=0;
+                double imageWidth = image.getWidth(null);
+                double imageHeight = image.getHeight(null);
+                double screenWidth = getWidth();
+                double screenHeight = getHeight();
+
+                if(screenWidth != 0) {
+                    x = (int) screenWidth / 2 - (int) imageWidth / 2;
+                }
+                if(screenHeight != 0) {
+                    y = (int) screenHeight / 2 - (int) imageHeight / 2;
+                }
+
+                g.drawImage(image, x, y, this);
+            }
+        };
     }
 
     private void buildFrame() {
