@@ -10,23 +10,23 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
-public class AreaOfCircle extends JInternalFrame {
+public class MathConversions extends JInternalFrame {
 
-    private static AreaOfCircle instance = null;
+    private static MathConversions instance = null;
 
     private JTextField textField;
     private JButton button;
     private JLabel label1, label2;
     private JPanel upperPanel, lowerPanel;
 
-    public static AreaOfCircle getInstance() {
+    public static MathConversions getInstance() {
         if(instance == null) {
-            instance = new AreaOfCircle();
+            instance = new MathConversions();
         }
         return instance;
     }
 
-    private AreaOfCircle() {
+    private MathConversions() {
         //args: title, resisability, closability, maximizablity and iconifiability
         super("Area Of Circle", false, true, false, false);
         textField = new JTextField(10);

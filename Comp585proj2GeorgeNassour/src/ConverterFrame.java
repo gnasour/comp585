@@ -1,5 +1,6 @@
 /**
- * Created by Gaming on 2/21/2018.
+ * Created by George Nassour on 2/21/2018.
+ * Building the frame and tree
  */
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -54,11 +55,33 @@ class ConverterFrame extends JFrame {
     private DefaultMutableTreeNode fractionToDecimal;
 
     //Metric conversions
+    private DefaultMutableTreeNode metric;
     private DefaultMutableTreeNode poundToKilograms;
     private DefaultMutableTreeNode mphToKPH;
-    private DefaultMutableTreeNode 
+    private DefaultMutableTreeNode gallonsToLiters;
 
+    //Temperature Conversions
+    private DefaultMutableTreeNode temperature;
+    private DefaultMutableTreeNode celsiusToFahrenheit;
+    private DefaultMutableTreeNode celsiusToKelvin;
+    private DefaultMutableTreeNode fahrenheitToCelsius;
 
+    //Speed Conversions
+    private DefaultMutableTreeNode speed;
+    private DefaultMutableTreeNode inchpsToFootPS;
+    private DefaultMutableTreeNode inchpsToMeterPS;
+    private DefaultMutableTreeNode inchpsToMilliPS;
+
+    //Newtonian Force Conversions
+    private DefaultMutableTreeNode force;
+    private DefaultMutableTreeNode kilogramMeterToPoundFeet;
+    private DefaultMutableTreeNode newtonMeterToPoundFeet;
+    private DefaultMutableTreeNode kilogramMeterToNewtonMeter;
+
+    //Slow task node
+    private DefaultMutableTreeNode slowTask;
+
+    //Contains the overall tree structure
     private DefaultTreeModel treeModel;
 
     public ConverterFrame(){initComponenets();}
@@ -67,6 +90,7 @@ class ConverterFrame extends JFrame {
     private void initComponenets(){
         buildDesktop();
         initTree();
+        buildTree();
         addTreeListeners();
         initMenu();
         addMenuListeners();
@@ -77,10 +101,15 @@ class ConverterFrame extends JFrame {
     //Initialize the tree nodes and add them to a tree
     private void initTree(){
         fastTasks = new DefaultMutableTreeNode("Conversions");
+        //
         math = new DefaultMutableTreeNode("Math");
         circle = new DefaultMutableTreeNode("Area of Circle");
         degreeToRadians = new DefaultMutableTreeNode("Degree to Radians");
         fractionToDecimal = new DefaultMutableTreeNode("Fraction to Decimal");
+
+    }
+
+    private void buildTree(){
         math.add(circle);
         math.add(degreeToRadians);
         math.add(fractionToDecimal);
@@ -201,10 +230,10 @@ class ConverterFrame extends JFrame {
                 case "Area of Circle":
                     // bring up the dialog box
                     statusLabel.setText(node.toString() + " clicked!");
-                    AreaOfCircle areaOfCircle = AreaOfCircle.getInstance();
-                    if(!areaOfCircle.isVisible()) {
-                        areaOfCircle.setVisible(true);
-                        desktop.add(areaOfCircle);
+                    MathConversions mathConversions = MathConversions.getInstance();
+                    if(!mathConversions.isVisible()) {
+                        mathConversions.setVisible(true);
+                        desktop.add(mathConversions);
                     }
                     break;
                 default:
