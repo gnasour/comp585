@@ -101,19 +101,61 @@ class ConverterFrame extends JFrame {
     //Initialize the tree nodes and add them to a tree
     private void initTree(){
         fastTasks = new DefaultMutableTreeNode("Conversions");
-        //
+        //Math
         math = new DefaultMutableTreeNode("Math");
         circle = new DefaultMutableTreeNode("Area of Circle");
         degreeToRadians = new DefaultMutableTreeNode("Degree to Radians");
         fractionToDecimal = new DefaultMutableTreeNode("Fraction to Decimal");
-
+        //Metric
+        metric = new DefaultMutableTreeNode("Metric");
+        poundToKilograms = new DefaultMutableTreeNode("Pound to Kilograms");
+        mphToKPH = new DefaultMutableTreeNode("MPH to KPH");
+        gallonsToLiters = new DefaultMutableTreeNode("Gallons to Liters");
+        //Temperature
+        temperature = new DefaultMutableTreeNode("Temperature");
+        celsiusToFahrenheit = new DefaultMutableTreeNode("Celsius to Fahrenheit");
+        celsiusToKelvin = new DefaultMutableTreeNode("Celsius to Kelvin");
+        fahrenheitToCelsius = new DefaultMutableTreeNode("Fahrenheit to Celsius");
+        //Speed
+        speed = new DefaultMutableTreeNode("Speed");
+        inchpsToFootPS = new DefaultMutableTreeNode("InchesPS to FeetPS");
+        inchpsToMeterPS = new DefaultMutableTreeNode("InchesPS to MetersPS");
+        inchpsToMilliPS = new DefaultMutableTreeNode("InchesPS to MilliPS");
+        //Force
+        force = new DefaultMutableTreeNode("Force");
+        kilogramMeterToPoundFeet = new DefaultMutableTreeNode("Kilogram/m to Pound/f");
+        newtonMeterToPoundFeet = new DefaultMutableTreeNode("Newton/m to Pound/f");
+        kilogramMeterToNewtonMeter = new DefaultMutableTreeNode("Kilogram/m to Newton/m");
     }
 
     private void buildTree(){
+        //Math
         math.add(circle);
         math.add(degreeToRadians);
         math.add(fractionToDecimal);
+        //metric
+        metric.add(poundToKilograms);
+        metric.add(mphToKPH);
+        metric.add(gallonsToLiters);
+        //temperature
+        temperature.add(celsiusToFahrenheit);
+        temperature.add(celsiusToKelvin);
+        temperature.add(fahrenheitToCelsius);
+        //speed
+        speed.add(inchpsToFootPS);
+        speed.add(inchpsToMeterPS);
+        speed.add(inchpsToMilliPS);
+        //force
+        force.add(kilogramMeterToPoundFeet);
+        force.add(newtonMeterToPoundFeet);
+        force.add(kilogramMeterToNewtonMeter);
+
         fastTasks.add(math);
+        fastTasks.add(metric);
+        fastTasks.add(temperature);
+        fastTasks.add(speed);
+        fastTasks.add(force);
+
         treeModel = new DefaultTreeModel(fastTasks);
         tree = new JTree(treeModel);
     }
