@@ -45,9 +45,20 @@ class ConverterFrame extends JFrame {
     private JMenuItem about;
 
     //Tree nodes of the different options
-    private DefaultMutableTreeNode root;
+    private DefaultMutableTreeNode fastTasks;
+
+    //Math conversions
     private DefaultMutableTreeNode math;
     private DefaultMutableTreeNode circle;
+    private DefaultMutableTreeNode degreeToRadians;
+    private DefaultMutableTreeNode fractionToDecimal;
+
+    //Metric conversions
+    private DefaultMutableTreeNode poundToKilograms;
+    private DefaultMutableTreeNode mphToKPH;
+    private DefaultMutableTreeNode 
+
+
     private DefaultTreeModel treeModel;
 
     public ConverterFrame(){initComponenets();}
@@ -56,19 +67,25 @@ class ConverterFrame extends JFrame {
     private void initComponenets(){
         buildDesktop();
         initTree();
+        addTreeListeners();
         initMenu();
+        addMenuListeners();
         initPanel();
         buildFrame();
     }
 
     //Initialize the tree nodes and add them to a tree
     private void initTree(){
-        root = new DefaultMutableTreeNode("root");
-        math = new DefaultMutableTreeNode("math");
-        circle = new DefaultMutableTreeNode("circle");
+        fastTasks = new DefaultMutableTreeNode("Conversions");
+        math = new DefaultMutableTreeNode("Math");
+        circle = new DefaultMutableTreeNode("Area of Circle");
+        degreeToRadians = new DefaultMutableTreeNode("Degree to Radians");
+        fractionToDecimal = new DefaultMutableTreeNode("Fraction to Decimal");
         math.add(circle);
-        root.add(math);
-        treeModel = new DefaultTreeModel(root);
+        math.add(degreeToRadians);
+        math.add(fractionToDecimal);
+        fastTasks.add(math);
+        treeModel = new DefaultTreeModel(fastTasks);
         tree = new JTree(treeModel);
     }
 
@@ -147,4 +164,61 @@ class ConverterFrame extends JFrame {
         setSize(500,500);
         setVisible(true);
     }
+
+    private void addMenuListeners() {
+
+        exit.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                exitActionPerformed();
+            }
+        });
+
+        about.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                aboutActionPerformed();
+            }
+        });
+
+    }
+    private void addTreeListeners() {
+        tree.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent mouseEvent) {
+                int selRow = tree.getRowForLocation(mouseEvent.getX(), mouseEvent.getY());
+                if(selRow != -1) {
+                    treeClicked();
+                }
+            }
+        });
+    }
+
+    private void treeClicked() {
+        DefaultMutableTreeNode node = (DefaultMutableTreeNode) tree.getLastSelectedPathComponent();
+        if(node != null && node.isLeaf()) {
+            switch(node.toString()) {
+                case "Area of Circle":
+                    // bring up the dialog box
+                    statusLabel.setText(node.toString() + " clicked!");
+                    AreaOfCircle areaOfCircle = AreaOfCircle.getInstance();
+                    if(!areaOfCircle.isVisible()) {
+                        areaOfCircle.setVisible(true);
+                        desktop.add(areaOfCircle);
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+
+    private void exitActionPerformed() {
+        dispose();
+    }
+
+    private void aboutActionPerformed() {
+        JOptionPane.showMessageDialog(this, "Thx for using my app!");
+    }
+
 }
