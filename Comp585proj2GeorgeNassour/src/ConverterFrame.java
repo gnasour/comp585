@@ -305,6 +305,69 @@ class ConverterFrame extends JFrame {
                         desktop.add(poundToKilograms);
                     }
                     break;
+                case "MPH to KPH":
+                    // bring up the dialog box
+                    statusLabel.setText(node.toString() + " clicked!");
+                    MPHToKPH mphToKPH = MPHToKPH.getInstance();
+                    if(!mphToKPH.isVisible()) {
+                        mphToKPH.setVisible(true);
+                        desktop.add(mphToKPH);
+                    }
+                    break;
+                case "Gallons to Liters":
+                    // bring up the dialog box
+                    statusLabel.setText(node.toString() + " clicked!");
+                    GallonsToLiters gallonsToLiters = GallonsToLiters.getInstance();
+                    if(!gallonsToLiters.isVisible()) {
+                        gallonsToLiters.setVisible(true);
+                        desktop.add(gallonsToLiters);
+                    }
+                    break;
+                case "Celsius to Fahrenheit":
+                    // bring up the dialog box
+                    statusLabel.setText(node.toString() + " clicked!");
+                    CelsiusToFahrenheit celsiusToFahrenheit = CelsiusToFahrenheit.getInstance();
+                    if(!celsiusToFahrenheit.isVisible()) {
+                        celsiusToFahrenheit.setVisible(true);
+                        desktop.add(celsiusToFahrenheit);
+                    }
+                    break;
+                case "Celsius to Kelvin":
+                    // bring up the dialog box
+                    statusLabel.setText(node.toString() + " clicked!");
+                    CelsiusToKelvin celsiusToKelvin = CelsiusToKelvin.getInstance();
+                    if(!celsiusToKelvin.isVisible()) {
+                        celsiusToKelvin.setVisible(true);
+                        desktop.add(celsiusToKelvin);
+                    }
+                    break;
+                case "Fahrenheit to Celsius":
+                    // bring up the dialog box
+                    statusLabel.setText(node.toString() + " clicked!");
+                    FahrenheitToCelsius fahrenheitToCelsius = FahrenheitToCelsius.getInstance();
+                    if(!fahrenheitToCelsius.isVisible()) {
+                        fahrenheitToCelsius.setVisible(true);
+                        desktop.add(fahrenheitToCelsius);
+                    }
+                    break;
+                case "InchesPS to FeetPS":
+                    // bring up the dialog box
+                    statusLabel.setText(node.toString() + " clicked!");
+                    InchesPSToFeetPS inchesPSToFeetPS = InchesPSToFeetPS.getInstance();
+                    if(!inchesPSToFeetPS.isVisible()) {
+                        inchesPSToFeetPS.setVisible(true);
+                        desktop.add(inchesPSToFeetPS);
+                    }
+                    break;
+                case "InchesPS to FeetPS":
+                    // bring up the dialog box
+                    statusLabel.setText(node.toString() + " clicked!");
+                    InchesPSToFeetPS inchesPSToFeetPS = InchesPSToFeetPS.getInstance();
+                    if(!inchesPSToFeetPS.isVisible()) {
+                        inchesPSToFeetPS.setVisible(true);
+                        desktop.add(inchesPSToFeetPS);
+                    }
+                    break;
                 default:
                     break;
             }
