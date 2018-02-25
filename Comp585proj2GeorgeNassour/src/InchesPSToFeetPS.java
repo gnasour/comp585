@@ -28,9 +28,9 @@ class InchesPSToFeetPS extends JInternalFrame {
 
     private InchesPSToFeetPS() {
         //args: title, resisability, closability, maximizablity and iconifiability
-        super("Area Of Circle", false, true, false, false);
+        super("Inches/s to Feet/s", false, true, false, false);
         textField = new JTextField(10);
-        button = new JButton("Area");
+        button = new JButton("Calculate");
         label1 = new JLabel("Answer: ");
         label2 = new JLabel();
         upperPanel = new JPanel();
@@ -55,20 +55,20 @@ class InchesPSToFeetPS extends JInternalFrame {
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                areaOfCircle();
+                toFeetPS();
             }
         });
     }
 
-    private void areaOfCircle() {
+    private void toFeetPS() {
         label2.setText("");
         try {
-            double radius = Double.parseDouble(textField.getText());
-            double answer = Math.PI * (radius*radius);
-            label2.setText(String.valueOf(answer));
+            double inchesPS = Double.parseDouble(textField.getText());
+            double answer = inchesPS/12;
+            label2.setText(String.valueOf(answer) + " feet/s");
         }
         catch(NumberFormatException nfe) {
-            JOptionPane.showMessageDialog(this,"Hey buddy, enter a number!");
+            JOptionPane.showMessageDialog(this,"Enter a number!");
         }
     }
 

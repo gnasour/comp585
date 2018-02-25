@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
-public class PoundToKilograms extends JInternalFrame {
+class PoundToKilograms extends JInternalFrame {
 
     private static PoundToKilograms instance = null;
 
@@ -28,9 +28,9 @@ public class PoundToKilograms extends JInternalFrame {
 
     private PoundToKilograms() {
         //args: title, resisability, closability, maximizablity and iconifiability
-        super("Area Of Circle", false, true, false, false);
+        super("Pound to Kilogram", false, true, false, false);
         textField = new JTextField(10);
-        button = new JButton("Area");
+        button = new JButton("Calculate");
         label1 = new JLabel("Answer: ");
         label2 = new JLabel();
         upperPanel = new JPanel();
@@ -55,20 +55,20 @@ public class PoundToKilograms extends JInternalFrame {
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                areaOfCircle();
+                toKilograms();
             }
         });
     }
 
-    private void areaOfCircle() {
+    private void toKilograms() {
         label2.setText("");
         try {
-            double radius = Double.parseDouble(textField.getText());
-            double answer = Math.PI * (radius*radius);
+            double pounds = Double.parseDouble(textField.getText());
+            double answer = pounds*.453592;
             label2.setText(String.valueOf(answer));
         }
         catch(NumberFormatException nfe) {
-            JOptionPane.showMessageDialog(this,"Hey buddy, enter a number!");
+            JOptionPane.showMessageDialog(this,"Enter a number!");
         }
     }
 

@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
-public class MathConversions extends JInternalFrame {
+class MathConversions extends JInternalFrame {
 
     private static MathConversions instance = null;
 

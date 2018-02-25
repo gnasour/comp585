@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
-public class InchesPSToMilliPS extends JInternalFrame {
+class InchesPSToMilliPS extends JInternalFrame {
 
     private static InchesPSToMilliPS instance = null;
 
@@ -28,9 +28,9 @@ public class InchesPSToMilliPS extends JInternalFrame {
 
     private InchesPSToMilliPS() {
         //args: title, resisability, closability, maximizablity and iconifiability
-        super("Area Of Circle", false, true, false, false);
+        super("Inches/s to Milli/s", false, true, false, false);
         textField = new JTextField(10);
-        button = new JButton("Area");
+        button = new JButton("Calculate");
         label1 = new JLabel("Answer: ");
         label2 = new JLabel();
         upperPanel = new JPanel();
@@ -55,20 +55,20 @@ public class InchesPSToMilliPS extends JInternalFrame {
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                areaOfCircle();
+                toMilliPS();
             }
         });
     }
 
-    private void areaOfCircle() {
+    private void toMilliPS() {
         label2.setText("");
         try {
-            double radius = Double.parseDouble(textField.getText());
-            double answer = Math.PI * (radius*radius);
-            label2.setText(String.valueOf(answer));
+            double inchesPS = Double.parseDouble(textField.getText());
+            double answer = inchesPS*25.4;
+            label2.setText(String.valueOf(answer) + " mm/s");
         }
         catch(NumberFormatException nfe) {
-            JOptionPane.showMessageDialog(this,"Hey buddy, enter a number!");
+            JOptionPane.showMessageDialog(this,"Enter a number!");
         }
     }
 

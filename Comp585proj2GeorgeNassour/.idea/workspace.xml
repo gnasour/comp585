@@ -16,32 +16,19 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ConverterFrame.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ConverterFrame.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ConverterFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-63">
-              <caret line="289" column="38" lean-forward="false" selection-start-line="289" selection-start-column="38" selection-end-line="289" selection-end-column="38" />
+            <state relative-caret-position="-520">
+              <caret line="149" column="115" lean-forward="true" selection-start-line="149" selection-start-column="115" selection-end-line="149" selection-end-column="115" />
               <folding>
                 <element signature="method#initComponents#0;class#ConverterFrame#0" expanded="false" />
-                <element signature="method#buildTree#0;class#ConverterFrame#0" expanded="false" />
                 <element signature="method#initMenu#0;class#ConverterFrame#0" expanded="false" />
                 <element signature="method#initPanel#0;class#ConverterFrame#0" expanded="false" />
                 <element signature="method#buildDesktop#0;class#ConverterFrame#0" expanded="false" />
                 <element signature="method#buildFrame#0;class#ConverterFrame#0" expanded="false" />
                 <element signature="method#addMenuListeners#0;class#ConverterFrame#0" expanded="false" />
                 <element signature="method#addTreeListeners#0;class#ConverterFrame#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InchesPSToFeetPS.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/InchesPSToFeetPS.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -71,11 +58,6 @@
       <list>
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/AreaOfCircle.java" />
-        <option value="$PROJECT_DIR$/src/PoundToKilograms.java" />
-        <option value="$PROJECT_DIR$/src/MPHToKPH.java" />
-        <option value="$PROJECT_DIR$/src/InchesPSToMeterPS.java" />
-        <option value="$PROJECT_DIR$/src/InchesPSToMilliPS.java" />
-        <option value="$PROJECT_DIR$/src/KilogramMToPoundF.java" />
         <option value="$PROJECT_DIR$/src/KilogramMToNewtonM.java" />
         <option value="$PROJECT_DIR$/src/NewtonMToPoundF.java" />
         <option value="$PROJECT_DIR$/src/CelsiusToKelvin.java" />
@@ -83,11 +65,16 @@
         <option value="$PROJECT_DIR$/src/CelsiusToFahrenheit.java" />
         <option value="$PROJECT_DIR$/src/FahrenheitToCelsius.java" />
         <option value="$PROJECT_DIR$/src/FractionToDecimal.java" />
-        <option value="$PROJECT_DIR$/src/ConverterFrame.java" />
         <option value="$PROJECT_DIR$/src/VolumeOfSphere.java" />
-        <option value="$PROJECT_DIR$/src/MathConversions.java" />
         <option value="$PROJECT_DIR$/src/GallonsToLiters.java" />
         <option value="$PROJECT_DIR$/src/InchesPSToFeetPS.java" />
+        <option value="$PROJECT_DIR$/src/InchesPSToMeterPS.java" />
+        <option value="$PROJECT_DIR$/src/InchesPSToMilliPS.java" />
+        <option value="$PROJECT_DIR$/src/MathConversions.java" />
+        <option value="$PROJECT_DIR$/src/KilogramMToPoundF.java" />
+        <option value="$PROJECT_DIR$/src/MPHToKPH.java" />
+        <option value="$PROJECT_DIR$/src/PoundToKilograms.java" />
+        <option value="$PROJECT_DIR$/src/ConverterFrame.java" />
       </list>
     </option>
   </component>
@@ -350,7 +337,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13508065" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13508065" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.146875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -387,7 +374,6 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="method#initComponents#0;class#ConverterFrame#0" expanded="false" />
-            <element signature="method#buildTree#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#initMenu#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#initPanel#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#buildDesktop#0;class#ConverterFrame#0" expanded="false" />
@@ -422,7 +408,6 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="method#initComponents#0;class#ConverterFrame#0" expanded="false" />
-            <element signature="method#buildTree#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#initMenu#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#initPanel#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#buildDesktop#0;class#ConverterFrame#0" expanded="false" />
@@ -455,7 +440,6 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="method#initComponents#0;class#ConverterFrame#0" expanded="false" />
-            <element signature="method#buildTree#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#initMenu#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#initPanel#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#buildDesktop#0;class#ConverterFrame#0" expanded="false" />
@@ -488,7 +472,6 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="method#initComponents#0;class#ConverterFrame#0" expanded="false" />
-            <element signature="method#buildTree#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#initMenu#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#initPanel#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#buildDesktop#0;class#ConverterFrame#0" expanded="false" />
@@ -513,100 +496,12 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="method#initComponents#0;class#ConverterFrame#0" expanded="false" />
-            <element signature="method#buildTree#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#initMenu#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#initPanel#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#buildDesktop#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#buildFrame#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#addMenuListeners#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#addTreeListeners#0;class#ConverterFrame#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PoundToKilograms.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="59" column="11" lean-forward="true" selection-start-line="59" selection-start-column="11" selection-end-line="59" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1876#1877#0" expanded="true" />
-            <element signature="e#1922#1923#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MPHToKPH.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="20" lean-forward="false" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1836#1837#0" expanded="true" />
-            <element signature="e#1882#1883#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/InchesPSToMeterPS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="30" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
-          <folding>
-            <element signature="e#1881#1882#0" expanded="true" />
-            <element signature="e#1927#1928#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/InchesPSToMilliPS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="29" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1881#1882#0" expanded="true" />
-            <element signature="e#1927#1928#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/KilogramMToPoundF.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="29" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1881#1882#0" expanded="true" />
-            <element signature="e#1927#1928#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/NewtonMToPoundF.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
-          <caret line="62" column="21" lean-forward="false" selection-start-line="62" selection-start-column="21" selection-end-line="62" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/KilogramMToNewtonM.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="67" column="54" lean-forward="false" selection-start-line="67" selection-start-column="54" selection-end-line="67" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -667,16 +562,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MathConversions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="67" column="57" lean-forward="false" selection-start-line="67" selection-start-column="57" selection-end-line="67" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/VolumeOfSphere.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="577">
@@ -697,29 +582,116 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/InchesPSToFeetPS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="33">
+          <caret line="30" column="43" lean-forward="false" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/InchesPSToMeterPS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="67" column="57" lean-forward="false" selection-start-line="67" selection-start-column="57" selection-end-line="67" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/InchesPSToMilliPS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="42" lean-forward="true" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/KilogramMToPoundF.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-44">
+          <caret line="30" column="23" lean-forward="false" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/KilogramMToNewtonM.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="628">
+          <caret line="67" column="54" lean-forward="false" selection-start-line="67" selection-start-column="54" selection-end-line="67" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NewtonMToPoundF.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="466">
+          <caret line="62" column="21" lean-forward="false" selection-start-line="62" selection-start-column="21" selection-end-line="62" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MPHToKPH.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="602">
+          <caret line="67" column="55" lean-forward="false" selection-start-line="67" selection-start-column="55" selection-end-line="67" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PoundToKilograms.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="534">
+          <caret line="66" column="43" lean-forward="true" selection-start-line="66" selection-start-column="43" selection-end-line="66" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MathConversions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ConverterFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-63">
-          <caret line="289" column="38" lean-forward="false" selection-start-line="289" selection-start-column="38" selection-end-line="289" selection-end-column="38" />
+        <state relative-caret-position="-520">
+          <caret line="149" column="115" lean-forward="true" selection-start-line="149" selection-start-column="115" selection-end-line="149" selection-end-column="115" />
           <folding>
             <element signature="method#initComponents#0;class#ConverterFrame#0" expanded="false" />
-            <element signature="method#buildTree#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#initMenu#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#initPanel#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#buildDesktop#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#buildFrame#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#addMenuListeners#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#addTreeListeners#0;class#ConverterFrame#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/InchesPSToFeetPS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

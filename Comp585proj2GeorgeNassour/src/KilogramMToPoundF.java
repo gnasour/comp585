@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
-public class KilogramMToPoundF extends JInternalFrame {
+class KilogramMToPoundF extends JInternalFrame {
 
     private static KilogramMToPoundF instance = null;
 
@@ -28,9 +28,9 @@ public class KilogramMToPoundF extends JInternalFrame {
 
     private KilogramMToPoundF() {
         //args: title, resisability, closability, maximizablity and iconifiability
-        super("Area Of Circle", false, true, false, false);
+        super("Kilogram/m to Pound/f", false, true, false, false);
         textField = new JTextField(10);
-        button = new JButton("Area");
+        button = new JButton("Calculate");
         label1 = new JLabel("Answer: ");
         label2 = new JLabel();
         upperPanel = new JPanel();
@@ -55,20 +55,20 @@ public class KilogramMToPoundF extends JInternalFrame {
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                areaOfCircle();
+                toPoundFeet();
             }
         });
     }
 
-    private void areaOfCircle() {
+    private void toPoundFeet() {
         label2.setText("");
         try {
-            double radius = Double.parseDouble(textField.getText());
-            double answer = Math.PI * (radius*radius);
-            label2.setText(String.valueOf(answer));
+            double kiloforce = Double.parseDouble(textField.getText());
+            double answer = kiloforce*7.23301;
+            label2.setText(String.valueOf(answer) + " lb/f");
         }
         catch(NumberFormatException nfe) {
-            JOptionPane.showMessageDialog(this,"Hey buddy, enter a number!");
+            JOptionPane.showMessageDialog(this,"Enter a number!");
         }
     }
 

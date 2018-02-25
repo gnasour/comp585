@@ -46,40 +46,40 @@ class ConverterFrame extends JFrame {
     private JMenuItem about;
 
     //Tree nodes of the different options
-    private DefaultMutableTreeNode fastTasks;
+    private DefaultMutableTreeNode fastTasksNode;
 
     //Math conversions
-    private DefaultMutableTreeNode math;
-    private DefaultMutableTreeNode circle;
-    private DefaultMutableTreeNode degreeToRadians;
-    private DefaultMutableTreeNode volumeOfSphere;
+    private DefaultMutableTreeNode mathNode;
+    private DefaultMutableTreeNode circleNode;
+    private DefaultMutableTreeNode degreeToRadiansNode;
+    private DefaultMutableTreeNode volumeOfSphereNode;
 
     //Metric conversions
-    private DefaultMutableTreeNode metric;
-    private DefaultMutableTreeNode poundToKilograms;
-    private DefaultMutableTreeNode mphToKPH;
-    private DefaultMutableTreeNode gallonsToLiters;
+    private DefaultMutableTreeNode metricNode;
+    private DefaultMutableTreeNode poundToKilogramsNode;
+    private DefaultMutableTreeNode mphToKPHNode;
+    private DefaultMutableTreeNode gallonsToLitersNode;
 
     //Temperature Conversions
-    private DefaultMutableTreeNode temperature;
-    private DefaultMutableTreeNode celsiusToFahrenheit;
-    private DefaultMutableTreeNode celsiusToKelvin;
-    private DefaultMutableTreeNode fahrenheitToCelsius;
+    private DefaultMutableTreeNode temperatureNode;
+    private DefaultMutableTreeNode celsiusToFahrenheitNode;
+    private DefaultMutableTreeNode celsiusToKelvinNode;
+    private DefaultMutableTreeNode fahrenheitToCelsiusNode;
 
     //Speed Conversions
-    private DefaultMutableTreeNode speed;
-    private DefaultMutableTreeNode inchpsToFootPS;
-    private DefaultMutableTreeNode inchpsToMeterPS;
-    private DefaultMutableTreeNode inchpsToMilliPS;
+    private DefaultMutableTreeNode speedNode;
+    private DefaultMutableTreeNode inchpsToFootPSNode;
+    private DefaultMutableTreeNode inchpsToMeterPSNode;
+    private DefaultMutableTreeNode inchpsToMilliPSNode;
 
     //Newtonian Force Conversions
-    private DefaultMutableTreeNode force;
-    private DefaultMutableTreeNode kilogramMeterToPoundFeet;
-    private DefaultMutableTreeNode newtonMeterToPoundFeet;
-    private DefaultMutableTreeNode kilogramMeterToNewtonMeter;
+    private DefaultMutableTreeNode forceNode;
+    private DefaultMutableTreeNode kilogramMeterToPoundFeetNode;
+    private DefaultMutableTreeNode newtonMeterToPoundFeetNode;
+    private DefaultMutableTreeNode kilogramMeterToNewtonMeterNode;
 
     //Slow task node
-    private DefaultMutableTreeNode slowTask;
+    private DefaultMutableTreeNode slowTaskNode;
 
     //Contains the overall tree structure
     private DefaultTreeModel treeModel;
@@ -100,63 +100,63 @@ class ConverterFrame extends JFrame {
 
     //Initialize the tree nodes and add them to a tree
     private void initTree(){
-        fastTasks = new DefaultMutableTreeNode("Conversions");
+        fastTasksNode = new DefaultMutableTreeNode("Conversions");
         //Math
-        math = new DefaultMutableTreeNode("Math");
-        circle = new DefaultMutableTreeNode("Area of Circle");
-        degreeToRadians = new DefaultMutableTreeNode("Degree to Radians");
-        volumeOfSphere = new DefaultMutableTreeNode("Volume of Sphere");
+        mathNode = new DefaultMutableTreeNode("Math");
+        circleNode = new DefaultMutableTreeNode("Area of Circle");
+        degreeToRadiansNode = new DefaultMutableTreeNode("Degree to Radians");
+        volumeOfSphereNode = new DefaultMutableTreeNode("Volume of Sphere");
         //Metric
-        metric = new DefaultMutableTreeNode("Metric");
-        poundToKilograms = new DefaultMutableTreeNode("Pound to Kilograms");
-        mphToKPH = new DefaultMutableTreeNode("MPH to KPH");
-        gallonsToLiters = new DefaultMutableTreeNode("Gallons to Liters");
+        metricNode = new DefaultMutableTreeNode("Metric");
+        poundToKilogramsNode = new DefaultMutableTreeNode("Pound to Kilograms");
+        mphToKPHNode = new DefaultMutableTreeNode("MPH to KPH");
+        gallonsToLitersNode = new DefaultMutableTreeNode("Gallons to Liters");
         //Temperature
-        temperature = new DefaultMutableTreeNode("Temperature");
-        celsiusToFahrenheit = new DefaultMutableTreeNode("Celsius to Fahrenheit");
-        celsiusToKelvin = new DefaultMutableTreeNode("Celsius to Kelvin");
-        fahrenheitToCelsius = new DefaultMutableTreeNode("Fahrenheit to Celsius");
+        temperatureNode = new DefaultMutableTreeNode("Temperature");
+        celsiusToFahrenheitNode = new DefaultMutableTreeNode("Celsius to Fahrenheit");
+        celsiusToKelvinNode = new DefaultMutableTreeNode("Celsius to Kelvin");
+        fahrenheitToCelsiusNode = new DefaultMutableTreeNode("Fahrenheit to Celsius");
         //Speed
-        speed = new DefaultMutableTreeNode("Speed");
-        inchpsToFootPS = new DefaultMutableTreeNode("InchesPS to FeetPS");
-        inchpsToMeterPS = new DefaultMutableTreeNode("InchesPS to MetersPS");
-        inchpsToMilliPS = new DefaultMutableTreeNode("InchesPS to MilliPS");
+        speedNode = new DefaultMutableTreeNode("Speed");
+        inchpsToFootPSNode = new DefaultMutableTreeNode("InchesPS to FeetPS");
+        inchpsToMeterPSNode = new DefaultMutableTreeNode("InchesPS to MetersPS");
+        inchpsToMilliPSNode = new DefaultMutableTreeNode("InchesPS to MilliPS");
         //Force
-        force = new DefaultMutableTreeNode("Force");
-        kilogramMeterToPoundFeet = new DefaultMutableTreeNode("Kilogram/m to Pound/f");
-        newtonMeterToPoundFeet = new DefaultMutableTreeNode("Newton/m to Pound/f");
-        kilogramMeterToNewtonMeter = new DefaultMutableTreeNode("Kilogram/m to Newton/m");
+        forceNode = new DefaultMutableTreeNode("Force");
+        kilogramMeterToPoundFeetNode = new DefaultMutableTreeNode("Kilogram/m to Pound/f");
+        newtonMeterToPoundFeetNode = new DefaultMutableTreeNode("Newton/m to Pound/f");
+        kilogramMeterToNewtonMeterNode = new DefaultMutableTreeNode("Kilogram/m to Newton/m");
     }
 
     private void buildTree(){
         //Math
-        math.add(circle);
-        math.add(degreeToRadians);
-        math.add(volumeOfSphere);
+        mathNode.add(circleNode);
+        mathNode.add(degreeToRadiansNode);
+        mathNode.add(volumeOfSphereNode);
         //metric
-        metric.add(poundToKilograms);
-        metric.add(mphToKPH);
-        metric.add(gallonsToLiters);
+        metricNode.add(poundToKilogramsNode);
+        metricNode.add(mphToKPHNode);
+        metricNode.add(gallonsToLitersNode);
         //temperature
-        temperature.add(celsiusToFahrenheit);
-        temperature.add(celsiusToKelvin);
-        temperature.add(fahrenheitToCelsius);
+        temperatureNode.add(celsiusToFahrenheitNode);
+        temperatureNode.add(celsiusToKelvinNode);
+        temperatureNode.add(fahrenheitToCelsiusNode);
         //speed
-        speed.add(inchpsToFootPS);
-        speed.add(inchpsToMeterPS);
-        speed.add(inchpsToMilliPS);
+        speedNode.add(inchpsToFootPSNode);
+        speedNode.add(inchpsToMeterPSNode);
+        speedNode.add(inchpsToMilliPSNode);
         //force
-        force.add(kilogramMeterToPoundFeet);
-        force.add(newtonMeterToPoundFeet);
-        force.add(kilogramMeterToNewtonMeter);
+        forceNode.add(kilogramMeterToPoundFeetNode);
+        forceNode.add(newtonMeterToPoundFeetNode);
+        forceNode.add(kilogramMeterToNewtonMeterNode);
 
-        fastTasks.add(math);
-        fastTasks.add(metric);
-        fastTasks.add(temperature);
-        fastTasks.add(speed);
-        fastTasks.add(force);
+        fastTasksNode.add(mathNode);
+        fastTasksNode.add(metricNode);
+        fastTasksNode.add(temperatureNode);
+        fastTasksNode.add(speedNode);
+        fastTasksNode.add(forceNode);
 
-        treeModel = new DefaultTreeModel(fastTasks);
+        treeModel = new DefaultTreeModel(fastTasksNode);
         tree = new JTree(treeModel);
     }
 
@@ -359,7 +359,7 @@ class ConverterFrame extends JFrame {
                         desktop.add(inchesPSToFeetPS);
                     }
                     break;
-                case "InchesPS to MeterPS":
+                case "InchesPS to MetersPS":
                     // bring up the dialog box
                     statusLabel.setText(node.toString() + " clicked!");
                     InchesPSToMeterPS inchesPSToMeterPS = InchesPSToMeterPS.getInstance();
