@@ -16,11 +16,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ConverterFrame.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ConverterFrame.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ConverterFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="381">
-              <caret line="353" column="46" lean-forward="true" selection-start-line="353" selection-start-column="46" selection-end-line="353" selection-end-column="46" />
+            <state relative-caret-position="568">
+              <caret line="400" column="38" lean-forward="false" selection-start-line="400" selection-start-column="20" selection-end-line="400" selection-end-column="38" />
               <folding>
                 <element signature="method#initComponents#0;class#ConverterFrame#0" expanded="false" />
                 <element signature="method#buildTree#0;class#ConverterFrame#0" expanded="false" />
@@ -35,11 +35,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GallonsToLiters.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GallonsToLiters.java">
+      <file leaf-file-name="KilogramMToNewtonM.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/KilogramMToNewtonM.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="476">
-              <caret line="28" column="27" lean-forward="false" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
+              <caret line="28" column="30" lean-forward="false" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1886#1887#0" expanded="true" />
+                <element signature="e#1932#1933#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NewtonMToPoundF.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/NewtonMToPoundF.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="28" column="27" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1871#1872#0" expanded="true" />
@@ -79,7 +93,16 @@
         <option value="$PROJECT_DIR$/src/PoundToKilograms.java" />
         <option value="$PROJECT_DIR$/src/MPHToKPH.java" />
         <option value="$PROJECT_DIR$/src/GallonsToLiters.java" />
+        <option value="$PROJECT_DIR$/src/CelsiusToFahrenheit.java" />
+        <option value="$PROJECT_DIR$/src/CelsiusToKelvin.java" />
+        <option value="$PROJECT_DIR$/src/FahrenheitToCelsius.java" />
+        <option value="$PROJECT_DIR$/src/InchesPSToFeetPS.java" />
+        <option value="$PROJECT_DIR$/src/InchesPSToMeterPS.java" />
+        <option value="$PROJECT_DIR$/src/InchesPSToMilliPS.java" />
         <option value="$PROJECT_DIR$/src/ConverterFrame.java" />
+        <option value="$PROJECT_DIR$/src/KilogramMToPoundF.java" />
+        <option value="$PROJECT_DIR$/src/NewtonMToPoundF.java" />
+        <option value="$PROJECT_DIR$/src/KilogramMToNewtonM.java" />
       </list>
     </option>
   </component>
@@ -578,8 +601,100 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GallonsToLiters.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="26" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+          <folding>
+            <element signature="e#1871#1872#0" expanded="true" />
+            <element signature="e#1917#1918#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CelsiusToFahrenheit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="26" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+          <folding>
+            <element signature="e#1891#1892#0" expanded="true" />
+            <element signature="e#1937#1938#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CelsiusToKelvin.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
-          <caret line="28" column="27" lean-forward="false" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
+          <caret line="28" column="27" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1871#1872#0" expanded="true" />
+            <element signature="e#1917#1918#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FahrenheitToCelsius.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="26" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+          <folding>
+            <element signature="e#1891#1892#0" expanded="true" />
+            <element signature="e#1937#1938#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/InchesPSToFeetPS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="35" column="34" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1876#1877#0" expanded="true" />
+            <element signature="e#1922#1923#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/InchesPSToMeterPS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="30" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+          <folding>
+            <element signature="e#1881#1882#0" expanded="true" />
+            <element signature="e#1927#1928#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/InchesPSToMilliPS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="29" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1881#1882#0" expanded="true" />
+            <element signature="e#1927#1928#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/KilogramMToPoundF.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="29" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1881#1882#0" expanded="true" />
+            <element signature="e#1927#1928#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NewtonMToPoundF.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="27" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1871#1872#0" expanded="true" />
@@ -590,8 +705,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ConverterFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="353" column="46" lean-forward="true" selection-start-line="353" selection-start-column="46" selection-end-line="353" selection-end-column="46" />
+        <state relative-caret-position="568">
+          <caret line="400" column="38" lean-forward="false" selection-start-line="400" selection-start-column="20" selection-end-line="400" selection-end-column="38" />
           <folding>
             <element signature="method#initComponents#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#buildTree#0;class#ConverterFrame#0" expanded="false" />
@@ -601,6 +716,18 @@
             <element signature="method#buildFrame#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#addMenuListeners#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#addTreeListeners#0;class#ConverterFrame#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/KilogramMToNewtonM.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="30" lean-forward="false" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1886#1887#0" expanded="true" />
+            <element signature="e#1932#1933#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -359,13 +359,49 @@ class ConverterFrame extends JFrame {
                         desktop.add(inchesPSToFeetPS);
                     }
                     break;
-                case "InchesPS to FeetPS":
+                case "InchesPS to MeterPS":
                     // bring up the dialog box
                     statusLabel.setText(node.toString() + " clicked!");
-                    InchesPSToFeetPS inchesPSToFeetPS = InchesPSToFeetPS.getInstance();
-                    if(!inchesPSToFeetPS.isVisible()) {
-                        inchesPSToFeetPS.setVisible(true);
-                        desktop.add(inchesPSToFeetPS);
+                    InchesPSToMeterPS inchesPSToMeterPS = InchesPSToMeterPS.getInstance();
+                    if(!inchesPSToMeterPS.isVisible()) {
+                        inchesPSToMeterPS.setVisible(true);
+                        desktop.add(inchesPSToMeterPS);
+                    }
+                    break;
+                case "InchesPS to MilliPS":
+                    // bring up the dialog box
+                    statusLabel.setText(node.toString() + " clicked!");
+                    InchesPSToMilliPS inchesPSToMilliPS = InchesPSToMilliPS.getInstance();
+                    if(!inchesPSToMilliPS.isVisible()) {
+                        inchesPSToMilliPS.setVisible(true);
+                        desktop.add(inchesPSToMilliPS);
+                    }
+                    break;
+                case "Kilogram/m to Pound/f":
+                    // bring up the dialog box
+                    statusLabel.setText(node.toString() + " clicked!");
+                    KilogramMToPoundF kilogramMtoPoundF = KilogramMToPoundF.getInstance();
+                    if(!kilogramMtoPoundF.isVisible()) {
+                        kilogramMtoPoundF.setVisible(true);
+                        desktop.add(kilogramMtoPoundF);
+                    }
+                    break;
+                case "Newton/m to Pound/f":
+                    // bring up the dialog box
+                    statusLabel.setText(node.toString() + " clicked!");
+                    NewtonMToPoundF newtonMToPoundF = NewtonMToPoundF.getInstance();
+                    if(!newtonMToPoundF.isVisible()) {
+                        newtonMToPoundF.setVisible(true);
+                        desktop.add(newtonMToPoundF);
+                    }
+                    break;
+                case "Kilogram/m to Newton/m":
+                    // bring up the dialog box
+                    statusLabel.setText(node.toString() + " clicked!");
+                    KilogramMToNewtonM kilogramMToNewtonM = KilogramMToNewtonM.getInstance();
+                    if(!kilogramMToNewtonM.isVisible()) {
+                        kilogramMToNewtonM.setVisible(true);
+                        desktop.add(kilogramMToNewtonM);
                     }
                     break;
                 default:
