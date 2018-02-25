@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
-public class FahrenheitToCelsius extends JInternalFrame {
+class FahrenheitToCelsius extends JInternalFrame {
 
     private static FahrenheitToCelsius instance = null;
 
@@ -28,9 +28,9 @@ public class FahrenheitToCelsius extends JInternalFrame {
 
     private FahrenheitToCelsius() {
         //args: title, resisability, closability, maximizablity and iconifiability
-        super("Area Of Circle", false, true, false, false);
+        super("Fahrenheit to Celsius", false, true, false, false);
         textField = new JTextField(10);
-        button = new JButton("Area");
+        button = new JButton("Calculate");
         label1 = new JLabel("Answer: ");
         label2 = new JLabel();
         upperPanel = new JPanel();
@@ -55,20 +55,20 @@ public class FahrenheitToCelsius extends JInternalFrame {
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                areaOfCircle();
+                toCelsius();
             }
         });
     }
 
-    private void areaOfCircle() {
+    private void toCelsius() {
         label2.setText("");
         try {
-            double radius = Double.parseDouble(textField.getText());
-            double answer = Math.PI * (radius*radius);
-            label2.setText(String.valueOf(answer));
+            double fahrenheit = Double.parseDouble(textField.getText());
+            double answer = (fahrenheit-32)*(5/9);
+            label2.setText(String.valueOf(answer) + " °C");
         }
         catch(NumberFormatException nfe) {
-            JOptionPane.showMessageDialog(this,"Hey buddy, enter a number!");
+            JOptionPane.showMessageDialog(this,"Enter a number!");
         }
     }
 

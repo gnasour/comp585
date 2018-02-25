@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
-public class NewtonMToPoundF extends JInternalFrame {
+class NewtonMToPoundF extends JInternalFrame {
 
     private static NewtonMToPoundF instance = null;
 
@@ -28,9 +28,9 @@ public class NewtonMToPoundF extends JInternalFrame {
 
     private NewtonMToPoundF() {
         //args: title, resisability, closability, maximizablity and iconifiability
-        super("Area Of Circle", false, true, false, false);
+        super("Newton/m to Pound/f", false, true, false, false);
         textField = new JTextField(10);
-        button = new JButton("Area");
+        button = new JButton("Calculate");
         label1 = new JLabel("Answer: ");
         label2 = new JLabel();
         upperPanel = new JPanel();
@@ -55,20 +55,20 @@ public class NewtonMToPoundF extends JInternalFrame {
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                areaOfCircle();
+                toPF();
             }
         });
     }
 
-    private void areaOfCircle() {
+    private void toPF() {
         label2.setText("");
         try {
-            double radius = Double.parseDouble(textField.getText());
-            double answer = Math.PI * (radius*radius);
-            label2.setText(String.valueOf(answer));
+            double newtonM = Double.parseDouble(textField.getText());
+            double answer = newtonM/1.3558179483314;
+            label2.setText(String.valueOf(answer) + " lb/f");
         }
         catch(NumberFormatException nfe) {
-            JOptionPane.showMessageDialog(this,"Hey buddy, enter a number!");
+            JOptionPane.showMessageDialog(this,"Enter a number!");
         }
     }
 

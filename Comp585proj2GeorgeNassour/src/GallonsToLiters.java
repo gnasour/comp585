@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
-public class GallonsToLiters extends JInternalFrame {
+class GallonsToLiters extends JInternalFrame {
 
     private static GallonsToLiters instance = null;
 
@@ -28,9 +28,9 @@ public class GallonsToLiters extends JInternalFrame {
 
     private GallonsToLiters() {
         //args: title, resisability, closability, maximizablity and iconifiability
-        super("Area Of Circle", false, true, false, false);
+        super("Gallons to Liters", false, true, false, false);
         textField = new JTextField(10);
-        button = new JButton("Area");
+        button = new JButton("Calculate");
         label1 = new JLabel("Answer: ");
         label2 = new JLabel();
         upperPanel = new JPanel();
@@ -55,20 +55,20 @@ public class GallonsToLiters extends JInternalFrame {
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                areaOfCircle();
+                toLiters();
             }
         });
     }
 
-    private void areaOfCircle() {
+    private void toLiters() {
         label2.setText("");
         try {
-            double radius = Double.parseDouble(textField.getText());
-            double answer = Math.PI * (radius*radius);
-            label2.setText(String.valueOf(answer));
+            double gallons = Double.parseDouble(textField.getText());
+            double answer = gallons/0.26417;
+            label2.setText(String.valueOf(answer) + " L");
         }
         catch(NumberFormatException nfe) {
-            JOptionPane.showMessageDialog(this,"Hey buddy, enter a number!");
+            JOptionPane.showMessageDialog(this,"Enter a number!");
         }
     }
 

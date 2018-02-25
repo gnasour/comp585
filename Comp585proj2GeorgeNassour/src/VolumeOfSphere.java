@@ -10,27 +10,27 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
-public class FractionToDecimal extends JInternalFrame {
+class VolumeOfSphere extends JInternalFrame {
 
-    private static FractionToDecimal instance = null;
+    private static VolumeOfSphere instance = null;
 
     private JTextField textField;
     private JButton button;
     private JLabel label1, label2;
     private JPanel upperPanel, lowerPanel;
 
-    public static FractionToDecimal getInstance() {
+    public static VolumeOfSphere getInstance() {
         if(instance == null) {
-            instance = new FractionToDecimal();
+            instance = new VolumeOfSphere();
         }
         return instance;
     }
 
-    private FractionToDecimal() {
+    private VolumeOfSphere() {
         //args: title, resisability, closability, maximizablity and iconifiability
-        super("Area Of Circle", false, true, false, false);
+        super("Volume of Sphere", false, true, false, false);
         textField = new JTextField(10);
-        button = new JButton("Area");
+        button = new JButton("Calculate");
         label1 = new JLabel("Answer: ");
         label2 = new JLabel();
         upperPanel = new JPanel();
@@ -55,20 +55,20 @@ public class FractionToDecimal extends JInternalFrame {
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                areaOfCircle();
+                volumeOfSphere();
             }
         });
     }
 
-    private void areaOfCircle() {
+    private void volumeOfSphere() {
         label2.setText("");
         try {
             double radius = Double.parseDouble(textField.getText());
-            double answer = Math.PI * (radius*radius);
-            label2.setText(String.valueOf(answer));
+            double answer = (4*Math.pow(radius,3)*Math.PI)/3;
+            label2.setText(String.valueOf(answer) + " r^3");
         }
         catch(NumberFormatException nfe) {
-            JOptionPane.showMessageDialog(this,"Hey buddy, enter a number!");
+            JOptionPane.showMessageDialog(this,"Enter a number!");
         }
     }
 

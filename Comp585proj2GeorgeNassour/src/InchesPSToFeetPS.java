@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
-public class InchesPSToFeetPS extends JInternalFrame {
+class InchesPSToFeetPS extends JInternalFrame {
 
     private static InchesPSToFeetPS instance = null;
 

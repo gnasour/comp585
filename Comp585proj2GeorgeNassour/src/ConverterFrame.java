@@ -52,7 +52,7 @@ class ConverterFrame extends JFrame {
     private DefaultMutableTreeNode math;
     private DefaultMutableTreeNode circle;
     private DefaultMutableTreeNode degreeToRadians;
-    private DefaultMutableTreeNode fractionToDecimal;
+    private DefaultMutableTreeNode volumeOfSphere;
 
     //Metric conversions
     private DefaultMutableTreeNode metric;
@@ -105,7 +105,7 @@ class ConverterFrame extends JFrame {
         math = new DefaultMutableTreeNode("Math");
         circle = new DefaultMutableTreeNode("Area of Circle");
         degreeToRadians = new DefaultMutableTreeNode("Degree to Radians");
-        fractionToDecimal = new DefaultMutableTreeNode("Fraction to Decimal");
+        volumeOfSphere = new DefaultMutableTreeNode("Volume of Sphere");
         //Metric
         metric = new DefaultMutableTreeNode("Metric");
         poundToKilograms = new DefaultMutableTreeNode("Pound to Kilograms");
@@ -132,7 +132,7 @@ class ConverterFrame extends JFrame {
         //Math
         math.add(circle);
         math.add(degreeToRadians);
-        math.add(fractionToDecimal);
+        math.add(volumeOfSphere);
         //metric
         metric.add(poundToKilograms);
         metric.add(mphToKPH);
@@ -287,13 +287,13 @@ class ConverterFrame extends JFrame {
                         desktop.add(degreeRadianConversion);
                     }
                     break;
-                case "Fraction to Decimal":
+                case "Volume of Sphere":
                     // bring up the dialog box
                     statusLabel.setText(node.toString() + " clicked!");
-                    FractionToDecimal fractionToDecimal = FractionToDecimal.getInstance();
-                    if(!fractionToDecimal.isVisible()) {
-                        fractionToDecimal.setVisible(true);
-                        desktop.add(fractionToDecimal);
+                    VolumeOfSphere volumeOfSphere= VolumeOfSphere.getInstance();
+                    if(!volumeOfSphere.isVisible()) {
+                        volumeOfSphere.setVisible(true);
+                        desktop.add(volumeOfSphere);
                     }
                     break;
                 case "Pound to Kilograms":

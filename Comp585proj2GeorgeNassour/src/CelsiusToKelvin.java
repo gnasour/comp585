@@ -1,3 +1,4 @@
+//Convert from Celsius to Kelvin
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
@@ -10,7 +11,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
-public class CelsiusToKelvin extends JInternalFrame {
+class CelsiusToKelvin extends JInternalFrame {
 
     private static CelsiusToKelvin instance = null;
 
@@ -28,9 +29,9 @@ public class CelsiusToKelvin extends JInternalFrame {
 
     private CelsiusToKelvin() {
         //args: title, resisability, closability, maximizablity and iconifiability
-        super("Area Of Circle", false, true, false, false);
+        super("Celsius to Kelvin", false, true, false, false);
         textField = new JTextField(10);
-        button = new JButton("Area");
+        button = new JButton("Calculate");
         label1 = new JLabel("Answer: ");
         label2 = new JLabel();
         upperPanel = new JPanel();
@@ -55,20 +56,20 @@ public class CelsiusToKelvin extends JInternalFrame {
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                areaOfCircle();
+                toKelvin();
             }
         });
     }
 
-    private void areaOfCircle() {
+    private void toKelvin() {
         label2.setText("");
         try {
-            double radius = Double.parseDouble(textField.getText());
-            double answer = Math.PI * (radius*radius);
-            label2.setText(String.valueOf(answer));
+            double celsius = Double.parseDouble(textField.getText());
+            double answer = celsius+273.15;
+            label2.setText(String.valueOf(answer) + " K");
         }
         catch(NumberFormatException nfe) {
-            JOptionPane.showMessageDialog(this,"Hey buddy, enter a number!");
+            JOptionPane.showMessageDialog(this,"Enter a number!");
         }
     }
 

@@ -65,7 +65,7 @@ public class MathConversions extends JInternalFrame {
         try {
             double radius = Double.parseDouble(textField.getText());
             double answer = Math.PI * (radius*radius);
-            label2.setText(String.valueOf(answer));
+            label2.setText(String.valueOf(answer) + " r^2");
         }
         catch(NumberFormatException nfe) {
             JOptionPane.showMessageDialog(this,"Hey buddy, enter a number!");

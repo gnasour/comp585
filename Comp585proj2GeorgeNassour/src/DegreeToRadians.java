@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
-public class DegreeToRadians extends JInternalFrame {
+class DegreeToRadians extends JInternalFrame {
 
     private static DegreeToRadians instance = null;
 
@@ -28,9 +28,9 @@ public class DegreeToRadians extends JInternalFrame {
 
     private DegreeToRadians() {
         //args: title, resisability, closability, maximizablity and iconifiability
-        super("Area Of Circle", false, true, false, false);
+        super("Degrees to Radians", false, true, false, false);
         textField = new JTextField(10);
-        button = new JButton("Area");
+        button = new JButton("Calculate");
         label1 = new JLabel("Answer: ");
         label2 = new JLabel();
         upperPanel = new JPanel();
@@ -55,20 +55,20 @@ public class DegreeToRadians extends JInternalFrame {
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                areaOfCircle();
+                toRadians();
             }
         });
     }
 
-    private void areaOfCircle() {
+    private void toRadians() {
         label2.setText("");
         try {
-            double radius = Double.parseDouble(textField.getText());
-            double answer = Math.PI * (radius*radius);
-            label2.setText(String.valueOf(answer));
+            double degree = Double.parseDouble(textField.getText());
+            double answer = degree*Math.PI/180;
+            label2.setText(String.valueOf(answer) + " rad");
         }
         catch(NumberFormatException nfe) {
-            JOptionPane.showMessageDialog(this,"Hey buddy, enter a number!");
+            JOptionPane.showMessageDialog(this,"Enter a number!");
         }
     }
 

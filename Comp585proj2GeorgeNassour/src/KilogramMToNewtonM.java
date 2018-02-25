@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
-public class KilogramMToNewtonM extends JInternalFrame {
+class KilogramMToNewtonM extends JInternalFrame {
 
     private static KilogramMToNewtonM instance = null;
 
@@ -28,9 +28,9 @@ public class KilogramMToNewtonM extends JInternalFrame {
 
     private KilogramMToNewtonM() {
         //args: title, resisability, closability, maximizablity and iconifiability
-        super("Area Of Circle", false, true, false, false);
+        super("Kilogram/m to Newton/m", false, true, false, false);
         textField = new JTextField(10);
-        button = new JButton("Area");
+        button = new JButton("Calculate");
         label1 = new JLabel("Answer: ");
         label2 = new JLabel();
         upperPanel = new JPanel();
@@ -55,20 +55,20 @@ public class KilogramMToNewtonM extends JInternalFrame {
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                areaOfCircle();
+                toNm();
             }
         });
     }
 
-    private void areaOfCircle() {
+    private void toNm() {
         label2.setText("");
         try {
-            double radius = Double.parseDouble(textField.getText());
-            double answer = Math.PI * (radius*radius);
-            label2.setText(String.valueOf(answer));
+            double kilogramM = Double.parseDouble(textField.getText());
+            double answer = kilogramM/0.10197162129779;
+            label2.setText(String.valueOf(answer) + " Nm");
         }
         catch(NumberFormatException nfe) {
-            JOptionPane.showMessageDialog(this,"Hey buddy, enter a number!");
+            JOptionPane.showMessageDialog(this,"Enter a valid number!");
         }
     }
 
