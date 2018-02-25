@@ -287,6 +287,24 @@ class ConverterFrame extends JFrame {
                         desktop.add(degreeRadianConversion);
                     }
                     break;
+                case "Fraction to Decimal":
+                    // bring up the dialog box
+                    statusLabel.setText(node.toString() + " clicked!");
+                    FractionToDecimal fractionToDecimal = FractionToDecimal.getInstance();
+                    if(!fractionToDecimal.isVisible()) {
+                        fractionToDecimal.setVisible(true);
+                        desktop.add(fractionToDecimal);
+                    }
+                    break;
+                case "Pound to Kilograms":
+                    // bring up the dialog box
+                    statusLabel.setText(node.toString() + " clicked!");
+                    PoundToKilograms poundToKilograms = PoundToKilograms.getInstance();
+                    if(!poundToKilograms.isVisible()) {
+                        poundToKilograms.setVisible(true);
+                        desktop.add(poundToKilograms);
+                    }
+                    break;
                 default:
                     break;
             }
