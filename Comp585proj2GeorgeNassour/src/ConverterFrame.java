@@ -84,10 +84,10 @@ class ConverterFrame extends JFrame {
     //Contains the overall tree structure
     private DefaultTreeModel treeModel;
 
-    public ConverterFrame(){initComponenets();}
+    public ConverterFrame(){initComponents();}
 
     //Initialize the basic components with values
-    private void initComponenets(){
+    private void initComponents(){
         buildDesktop();
         initTree();
         buildTree();
@@ -276,6 +276,15 @@ class ConverterFrame extends JFrame {
                     if(!mathConversions.isVisible()) {
                         mathConversions.setVisible(true);
                         desktop.add(mathConversions);
+                    }
+                    break;
+                case "Degree to Radians":
+                    // bring up the dialog box
+                    statusLabel.setText(node.toString() + " clicked!");
+                    DegreeToRadians degreeRadianConversion = DegreeToRadians.getInstance();
+                    if(!degreeRadianConversion.isVisible()) {
+                        degreeRadianConversion.setVisible(true);
+                        desktop.add(degreeRadianConversion);
                     }
                     break;
                 default:
