@@ -408,6 +408,15 @@ class ConverterFrame extends JFrame {
                         desktop.add(kilogramMToNewtonM);
                     }
                     break;
+                case "Slow Task":
+                    // bring up the dialog box
+                    statusLabel.setText(node.toString() + " clicked!");
+                    LongTask longTask = LongTask.getInstance(this);
+                    if(!longTask.isVisible()) {
+                        longTask.setVisible(true);
+                        desktop.add(longTask);
+                    }
+                    break;
                 default:
                     break;
             }
