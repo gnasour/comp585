@@ -46,7 +46,7 @@ class ConverterFrame extends JFrame {
     private JMenuItem about;
 
     //Tree nodes of the different options
-    private DefaultMutableTreeNode fastTasksNode;
+    private DefaultMutableTreeNode tasksNode;
 
     //Math conversions
     private DefaultMutableTreeNode mathNode;
@@ -100,7 +100,8 @@ class ConverterFrame extends JFrame {
 
     //Initialize the tree nodes and add them to a tree
     private void initTree(){
-        fastTasksNode = new DefaultMutableTreeNode("Conversions");
+        tasksNode = new DefaultMutableTreeNode("Conversions");
+        slowTaskNode = new DefaultMutableTreeNode("Slow Task");
         //Math
         mathNode = new DefaultMutableTreeNode("Math");
         circleNode = new DefaultMutableTreeNode("Area of Circle");
@@ -150,13 +151,16 @@ class ConverterFrame extends JFrame {
         forceNode.add(newtonMeterToPoundFeetNode);
         forceNode.add(kilogramMeterToNewtonMeterNode);
 
-        fastTasksNode.add(mathNode);
-        fastTasksNode.add(metricNode);
-        fastTasksNode.add(temperatureNode);
-        fastTasksNode.add(speedNode);
-        fastTasksNode.add(forceNode);
+        tasksNode.add(mathNode);
+        tasksNode.add(metricNode);
+        tasksNode.add(temperatureNode);
+        tasksNode.add(speedNode);
+        tasksNode.add(forceNode);
+        tasksNode.add(slowTaskNode);
 
-        treeModel = new DefaultTreeModel(fastTasksNode);
+
+
+        treeModel = new DefaultTreeModel(tasksNode);
         tree = new JTree(treeModel);
     }
 
@@ -232,7 +236,7 @@ class ConverterFrame extends JFrame {
         setTitle("My App");
         setJMenuBar(menuBar);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(500,500);
+        setSize(750,750);
         setVisible(true);
     }
 
