@@ -27,6 +27,7 @@ import java.io.IOException;
 import java.io.FileNotFoundException;
 import java.util.List;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import org.omg.SendingContext.RunTime;
 
 class LongTask extends JInternalFrame {
 
@@ -41,6 +42,8 @@ class LongTask extends JInternalFrame {
     private JProgressBar progressBar;
     private JFrame frame; // to properly center JDialogFrame
     private int numOfTimeProcessGotCalled;
+    private FileReader fr;
+    private BufferedReader br;
 
     public static LongTask getInstance(JFrame frame) {
         if(instance == null) {
@@ -54,7 +57,31 @@ class LongTask extends JInternalFrame {
         /*
         * Main task. Executed in background thread.
         */
+        private void recurseThroughDirectories(File f){
+            File [] fs = f.listFiles();
+            for(File s: fs){
+                if(s.isDirectory()){
+                    recurseThroughDirectories(s);
+                }
+                else if(s.isFile()){
+                    try{
+                        fr = new FileReader(s.getAbsolutePath());
+                        br = new BufferedReader(fr);
+                        if(br.readLine().equals("Hello")){
+                            System.out.print("Found");
+                        }
+                        publish(s.getName());
+                    }catch (FileNotFoundException fnf){
+                        JOptionPane.showMessageDialog(frame, "File not found");
+                    }catch (IOException ioe){
+                        JOptionPane.showMessageDialog(frame, "IO error");
+                    }
+                }
+            }
+        }
+
         @Override
+
         public Void doInBackground() {
             if(fileName.equals("")) {
                 JOptionPane.showMessageDialog(frame, "Choose a file!");
@@ -62,7 +89,8 @@ class LongTask extends JInternalFrame {
             }
             progressBar.setIndeterminate(true);
             lbl2.setText("");
-            try {
+            recurseThroughDirectories(new File(fileName));
+            /*try {
                 int lines = 0;
                 String fileLine = "";
                 FileReader data = new FileReader(fileName);
@@ -82,8 +110,9 @@ class LongTask extends JInternalFrame {
             }
             catch(IOException ex) {
                 JOptionPane.showMessageDialog(frame, "An error occured");
-            }
+            }*/
             return null;
+
         }
 
         @Override
@@ -119,6 +148,9 @@ class LongTask extends JInternalFrame {
         }
     }
 
+    //Recurse through the directories until you have found a file
+
+
     private LongTask(JFrame frame) {
 
         super("File Info", false, true, false, false);
@@ -132,7 +164,7 @@ class LongTask extends JInternalFrame {
         lbl2 = new JLabel();
         fc = new JFileChooser();
         fc.setAcceptAllFileFilterUsed(false);
-        fc.addChoosableFileFilter(new FileNameExtensionFilter("Text Files", "txt"));
+        fc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
         progressBar = new JProgressBar(0, 100);
         //Call setStringPainted now so that the progress bar height
         //stays the same whether or not the string is shown.
