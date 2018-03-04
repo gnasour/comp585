@@ -3,6 +3,7 @@
  * Same one as in class, search line by line in a text file
  */
 
+import java.util.StringTokenizer;
 import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -21,8 +22,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 import java.io.File;
-import java.io.FileReader;
-import java.io.BufferedReader;
+import java.util.Scanner;
 import java.io.IOException;
 import java.io.FileNotFoundException;
 import java.util.List;
@@ -42,8 +42,9 @@ class LongTask extends JInternalFrame {
     private JProgressBar progressBar;
     private JFrame frame; // to properly center JDialogFrame
     private int numOfTimeProcessGotCalled;
-    private FileReader fr;
-    private BufferedReader br;
+    private Scanner scanner;
+    private String word;
+    private StringTokenizer st;
 
     public static LongTask getInstance(JFrame frame) {
         if(instance == null) {
@@ -56,32 +57,46 @@ class LongTask extends JInternalFrame {
     class Task extends SwingWorker<Void, String> {
         /*
         * Main task. Executed in background thread.
+        *
         */
         private void recurseThroughDirectories(File f){
-            File [] fs = f.listFiles();
-            for(File s: fs){
-                if(s.isDirectory()){
-                    recurseThroughDirectories(s);
+            File root = new File( f.getAbsolutePath() );
+            File[] list = root.listFiles();
+
+
+            if (list == null) return;
+            for ( File fs : list ) {
+                if ( fs.isDirectory() ) {
+                    recurseThroughDirectories(fs);
+                    System.out.println( "Dir:" + fs.getAbsoluteFile() );
+
+
                 }
-                else if(s.isFile()){
+                else if (fs.isFile()){
+                    System.out.println("File:" + fs.getAbsolutePath());
                     try{
-                        fr = new FileReader(s.getAbsolutePath());
-                        br = new BufferedReader(fr);
-                        if(br.readLine().equals("Hello")){
-                            System.out.print("Found");
+
+                    scanner = new Scanner(fs);
+                    while(scanner.hasNext()){
+                        word = scanner.next();
+                        if(word.equals("Hello")){
+                            System.out.println(word);
                         }
-                        publish(s.getName());
-                    }catch (FileNotFoundException fnf){
-                        JOptionPane.showMessageDialog(frame, "File not found");
-                    }catch (IOException ioe){
-                        JOptionPane.showMessageDialog(frame, "IO error");
                     }
+
+
+                }catch(FileNotFoundException fnf){
+
+                    }catch (IOException ioe){
+                        System.out.println(ioe);
+                    }
+
                 }
             }
+
         }
-
+        //Executing long task and updating progress bar
         @Override
-
         public Void doInBackground() {
             if(fileName.equals("")) {
                 JOptionPane.showMessageDialog(frame, "Choose a file!");
@@ -90,37 +105,12 @@ class LongTask extends JInternalFrame {
             progressBar.setIndeterminate(true);
             lbl2.setText("");
             recurseThroughDirectories(new File(fileName));
-            /*try {
-                int lines = 0;
-                String fileLine = "";
-                FileReader data = new FileReader(fileName);
-                BufferedReader br = new BufferedReader(data);
-                while((fileLine = br.readLine()) != null) {
-                    System.out.println("Number of lines: " + String.valueOf(lines));
-                    lbl2.setText(String.valueOf(lines));
-                    publish(String.valueOf(lines));
-                    lines++;
-                }
-                lbl2.setText(String.valueOf(lines));
-                // close the file
-                br.close();
-            }
-            catch(FileNotFoundException ex) {
-                JOptionPane.showMessageDialog(frame, "File not found!");
-            }
-            catch(IOException ex) {
-                JOptionPane.showMessageDialog(frame, "An error occured");
-            }*/
             return null;
 
         }
 
         @Override
         protected void process(List<String> chunks) {
-            // Messages received from the doInBackground() (when invoking the publish() method)
-            //System.out.println("in process (called by doInBackground), setting label to: " + String.valueOf(chunks.get(chunks.size()-1)));
-            //lbl2.setText(String.valueOf(chunks.get(chunks.size()-1)));
-            //System.out.println("in process (called by doInBackground): numOfTimeProcessGotCalled = " + numOfTimeProcessGotCalled);
         }
 
         /*
