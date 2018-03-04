@@ -2,7 +2,7 @@
  * Long task class
  * Same one as in class, search line by line in a text file
  */
-
+//Swing components
 import java.util.StringTokenizer;
 import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
@@ -14,20 +14,19 @@ import javax.swing.JFrame;
 import javax.swing.SwingWorker;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-
+//AWT components
 import java.awt.FlowLayout;
 import java.awt.Dimension;
 import java.awt.BorderLayout;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-
+//Opening files and parsing strings
 import java.io.File;
 import java.util.Scanner;
 import java.io.IOException;
 import java.io.FileNotFoundException;
 import java.util.List;
-import javax.swing.filechooser.FileNameExtensionFilter;
-import org.omg.SendingContext.RunTime;
+
 
 class LongTask extends JInternalFrame {
 
@@ -43,7 +42,7 @@ class LongTask extends JInternalFrame {
     private JFrame frame; // to properly center JDialogFrame
     private int numOfTimeProcessGotCalled;
     private Scanner scanner;
-    private String word;
+    private String line, grepWord;
     private StringTokenizer st;
 
     public static LongTask getInstance(JFrame frame) {
@@ -78,17 +77,21 @@ class LongTask extends JInternalFrame {
 
                     scanner = new Scanner(fs);
                     while(scanner.hasNext()){
-                        word = scanner.next();
-                        if(word.equals("Hello")){
-                            System.out.println(word);
+                        line = scanner.nextLine();
+                        st = new StringTokenizer(line);
+                        while(st.hasMoreTokens()){
+                            if(st.nextToken().equals("Hello")){
+                                System.out.println(line);
+                            }
                         }
                     }
 
 
                 }catch(FileNotFoundException fnf){
-
-                    }catch (IOException ioe){
-                        System.out.println(ioe);
+                        System.out.println("The file selected was not found: " + fnf.toString());
+                    }
+                    catch (NullPointerException npe){
+                        System.out.println("Null value while traversing through the files: " + npe.toString());
                     }
 
                 }
