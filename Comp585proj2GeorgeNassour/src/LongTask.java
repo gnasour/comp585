@@ -28,7 +28,7 @@ class LongTask extends JInternalFrame {
     private JLabel lbl, lbl2;
     private JTextField tf;
     private JTextArea grepResults;
-    private JButton fileBtn, readBtn;
+    private JButton fileBtn, readBtn, grepChoice;
     private JFileChooser fc;
     private String fileName;
     private Task task;
@@ -124,6 +124,7 @@ class LongTask extends JInternalFrame {
         }
     }
 
+    //Choosing a directory to descend through
     private void chooseFile() {
         lbl2.setText("");
         fileName = "";
@@ -137,20 +138,25 @@ class LongTask extends JInternalFrame {
         }
     }
 
+    //Choosing a word to grep for
+    private void chooseWord(){
+        //Task: Create a text box for the user to enter a word to grep for
+    }
+
+
     //Recurse through the directories until you have found a file
-
-
     private LongTask(JFrame frame) {
 
         super("File Info", false, true, false, false);
         this.frame = frame;
         // init
-        tf = new JTextField(50);
+        tf = new JTextField(35);
         grepResults = new JTextArea(RESULT_HEIGHT, RESULT_WIDTH);
         grepResults.setEditable(false);
         tf.setEditable(false);
         fileBtn = new JButton("...");
         readBtn = new JButton("Read");
+        grepChoice = new JButton("Grep Word");
         lbl = new JLabel("Number of lines: ");
         lbl2 = new JLabel();
         fc = new JFileChooser();
@@ -164,6 +170,7 @@ class LongTask extends JInternalFrame {
 
         fileBtn.setPreferredSize(new Dimension(20, 20));
         readBtn.setPreferredSize(new Dimension(80, 20));
+        grepChoice.setPreferredSize(new Dimension(110,20));
 
         JPanel upperPanel = new JPanel();
         JPanel midPanel = new JPanel();
@@ -176,6 +183,7 @@ class LongTask extends JInternalFrame {
         upperPanel.add(tf);
         upperPanel.add(fileBtn);
         upperPanel.add(readBtn);
+        upperPanel.add(grepChoice);
 
         midPanel.add(progressBar);
         midPanel.add(grepResults);
@@ -199,8 +207,14 @@ class LongTask extends JInternalFrame {
             public void actionPerformed(ActionEvent e) {
                 readBtn.setEnabled(false);
                 task = new Task();
-                //task.addPropertyChangeListener(this);
                 task.execute();
+            }
+        });
+
+        grepChoice.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                chooseWord();
             }
         });
 
