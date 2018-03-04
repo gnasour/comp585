@@ -4,16 +4,7 @@
  */
 //Swing components
 import java.util.StringTokenizer;
-import javax.swing.JInternalFrame;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
-import javax.swing.JButton;
-import javax.swing.JFileChooser;
-import javax.swing.JProgressBar;
-import javax.swing.JFrame;
-import javax.swing.SwingWorker;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
+import javax.swing.*;
 //AWT components
 import java.awt.FlowLayout;
 import java.awt.Dimension;
@@ -23,17 +14,20 @@ import java.awt.event.ActionEvent;
 //Opening files and parsing strings
 import java.io.File;
 import java.util.Scanner;
-import java.io.IOException;
 import java.io.FileNotFoundException;
 import java.util.List;
 
-
 class LongTask extends JInternalFrame {
+
+    //GREP RESULT WINDOW
+    private static final int RESULT_WIDTH = 50;
+    private static final int RESULT_HEIGHT = 10;
 
     private static LongTask instance = null;
 
     private JLabel lbl, lbl2;
     private JTextField tf;
+    private JTextArea grepResults;
     private JButton fileBtn, readBtn;
     private JFileChooser fc;
     private String fileName;
@@ -44,6 +38,8 @@ class LongTask extends JInternalFrame {
     private Scanner scanner;
     private String line, grepWord;
     private StringTokenizer st;
+
+
 
     public static LongTask getInstance(JFrame frame) {
         if(instance == null) {
@@ -81,7 +77,7 @@ class LongTask extends JInternalFrame {
                         st = new StringTokenizer(line);
                         while(st.hasMoreTokens()){
                             if(st.nextToken().equals("Hello")){
-                                System.out.println(line);
+                                grepResults.append(line + "\n");
                             }
                         }
                     }
@@ -150,6 +146,8 @@ class LongTask extends JInternalFrame {
         this.frame = frame;
         // init
         tf = new JTextField(50);
+        grepResults = new JTextArea(RESULT_HEIGHT, RESULT_WIDTH);
+        grepResults.setEditable(false);
         tf.setEditable(false);
         fileBtn = new JButton("...");
         readBtn = new JButton("Read");
@@ -180,8 +178,9 @@ class LongTask extends JInternalFrame {
         upperPanel.add(readBtn);
 
         midPanel.add(progressBar);
+        midPanel.add(grepResults);
 
-        lowerPanel.add(lbl);
+        lowerPanel.add(grepResults);
         lowerPanel.add(lbl2);
 
         add(upperPanel, BorderLayout.NORTH);
@@ -206,7 +205,7 @@ class LongTask extends JInternalFrame {
         });
 
         pack();
-        setBounds(25, 25, 700, 120);
+        setBounds(25, 25, 700, 300);
         setLocation(50, 50);
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
     }

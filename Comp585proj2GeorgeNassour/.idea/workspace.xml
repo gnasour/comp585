@@ -19,15 +19,14 @@
       <file leaf-file-name="ConverterFrame.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ConverterFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1071">
-              <caret line="90" column="0" lean-forward="false" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
+            <state relative-caret-position="51">
+              <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
               <folding>
                 <element signature="method#buildTree#0;class#ConverterFrame#0" expanded="false" />
                 <element signature="method#initMenu#0;class#ConverterFrame#0" expanded="false" />
                 <element signature="method#initPanel#0;class#ConverterFrame#0" expanded="false" />
                 <element signature="method#buildDesktop#0;class#ConverterFrame#0" expanded="false" />
                 <element signature="method#addMenuListeners#0;class#ConverterFrame#0" expanded="false" />
-                <element signature="method#addTreeListeners#0;class#ConverterFrame#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -36,12 +35,9 @@
       <file leaf-file-name="LongTask.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/LongTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2329">
-              <caret line="155" column="46" lean-forward="true" selection-start-line="155" selection-start-column="46" selection-end-line="155" selection-end-column="46" />
-              <folding>
-                <element signature="e#0#6524#0" expanded="true" />
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="-1615">
+              <caret line="83" column="0" lean-forward="true" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -388,7 +384,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296371" sideWeight="0.50416666" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36895162" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36895162" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296371" sideWeight="0.49791667" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.108333334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -431,10 +427,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#6524#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -448,7 +441,6 @@
             <element signature="method#initPanel#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#buildDesktop#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#addMenuListeners#0;class#ConverterFrame#0" expanded="false" />
-            <element signature="method#addTreeListeners#0;class#ConverterFrame#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -457,10 +449,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#6524#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -484,7 +473,6 @@
             <element signature="method#initPanel#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#buildDesktop#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#addMenuListeners#0;class#ConverterFrame#0" expanded="false" />
-            <element signature="method#addTreeListeners#0;class#ConverterFrame#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -499,7 +487,6 @@
             <element signature="method#initPanel#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#buildDesktop#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#addMenuListeners#0;class#ConverterFrame#0" expanded="false" />
-            <element signature="method#addTreeListeners#0;class#ConverterFrame#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -514,7 +501,6 @@
             <element signature="method#initPanel#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#buildDesktop#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#addMenuListeners#0;class#ConverterFrame#0" expanded="false" />
-            <element signature="method#addTreeListeners#0;class#ConverterFrame#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -549,7 +535,6 @@
             <element signature="method#initPanel#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#buildDesktop#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#addMenuListeners#0;class#ConverterFrame#0" expanded="false" />
-            <element signature="method#addTreeListeners#0;class#ConverterFrame#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -584,7 +569,6 @@
             <element signature="method#initPanel#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#buildDesktop#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#addMenuListeners#0;class#ConverterFrame#0" expanded="false" />
-            <element signature="method#addTreeListeners#0;class#ConverterFrame#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -619,7 +603,6 @@
             <element signature="method#initPanel#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#buildDesktop#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#addMenuListeners#0;class#ConverterFrame#0" expanded="false" />
-            <element signature="method#addTreeListeners#0;class#ConverterFrame#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -644,7 +627,6 @@
             <element signature="method#initPanel#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#buildDesktop#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#addMenuListeners#0;class#ConverterFrame#0" expanded="false" />
-            <element signature="method#addTreeListeners#0;class#ConverterFrame#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -892,21 +874,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ConverterFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1071">
-          <caret line="90" column="0" lean-forward="false" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
-          <folding>
-            <element signature="method#buildTree#0;class#ConverterFrame#0" expanded="false" />
-            <element signature="method#initMenu#0;class#ConverterFrame#0" expanded="false" />
-            <element signature="method#initPanel#0;class#ConverterFrame#0" expanded="false" />
-            <element signature="method#buildDesktop#0;class#ConverterFrame#0" expanded="false" />
-            <element signature="method#addMenuListeners#0;class#ConverterFrame#0" expanded="false" />
-            <element signature="method#addTreeListeners#0;class#ConverterFrame#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/javax/swing/JFileChooser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="386">
@@ -935,14 +902,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/ConverterFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding>
+            <element signature="method#buildTree#0;class#ConverterFrame#0" expanded="false" />
+            <element signature="method#initMenu#0;class#ConverterFrame#0" expanded="false" />
+            <element signature="method#initPanel#0;class#ConverterFrame#0" expanded="false" />
+            <element signature="method#buildDesktop#0;class#ConverterFrame#0" expanded="false" />
+            <element signature="method#addMenuListeners#0;class#ConverterFrame#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/LongTask.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2329">
-          <caret line="155" column="46" lean-forward="true" selection-start-line="155" selection-start-column="46" selection-end-line="155" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#6524#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="-1615">
+          <caret line="83" column="0" lean-forward="true" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
