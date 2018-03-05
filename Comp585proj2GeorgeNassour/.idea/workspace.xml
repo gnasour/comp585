@@ -19,14 +19,18 @@
       <file leaf-file-name="ConverterFrame.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ConverterFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+            <state relative-caret-position="2142">
+              <caret line="200" column="42" lean-forward="false" selection-start-line="200" selection-start-column="42" selection-end-line="200" selection-end-column="42" />
               <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#initTree#0;class#ConverterFrame#0" expanded="false" />
                 <element signature="method#buildTree#0;class#ConverterFrame#0" expanded="false" />
                 <element signature="method#initMenu#0;class#ConverterFrame#0" expanded="false" />
-                <element signature="method#initPanel#0;class#ConverterFrame#0" expanded="false" />
                 <element signature="method#buildDesktop#0;class#ConverterFrame#0" expanded="false" />
+                <element signature="method#buildFrame#0;class#ConverterFrame#0" expanded="false" />
                 <element signature="method#addMenuListeners#0;class#ConverterFrame#0" expanded="false" />
+                <element signature="method#addTreeListeners#0;class#ConverterFrame#0" expanded="false" />
+                <element signature="method#treeClicked#0;class#ConverterFrame#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -35,11 +39,10 @@
       <file leaf-file-name="LongTask.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/LongTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="142" column="74" lean-forward="false" selection-start-line="142" selection-start-column="74" selection-end-line="142" selection-end-column="74" />
+            <state relative-caret-position="1475">
+              <caret line="179" column="32" lean-forward="true" selection-start-line="179" selection-start-column="32" selection-end-line="179" selection-end-column="32" />
               <folding>
-                <element signature="e#6786#6787#0" expanded="true" />
-                <element signature="e#6830#6831#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -103,8 +106,8 @@
         <option value="$PROJECT_DIR$/src/KilogramMToPoundF.java" />
         <option value="$PROJECT_DIR$/src/MPHToKPH.java" />
         <option value="$PROJECT_DIR$/src/PoundToKilograms.java" />
-        <option value="$PROJECT_DIR$/src/ConverterFrame.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/ConverterFrame.java" />
         <option value="$PROJECT_DIR$/src/LongTask.java" />
       </list>
     </option>
@@ -132,7 +135,6 @@
     <panes>
       <pane id="Scope" />
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -171,6 +173,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -382,12 +385,10 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3374613" sideWeight="0.4978701" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296371" sideWeight="0.49583334" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296371" sideWeight="0.50416666" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36895162" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296371" sideWeight="0.49791667" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.108333334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -395,13 +396,15 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39919356" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296371" sideWeight="0.49583334" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36895162" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39919356" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -417,7 +420,7 @@
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="8" />
+      <option name="time" value="9" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -431,8 +434,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#6786#6787#0" expanded="true" />
-            <element signature="e#6830#6831#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -442,11 +444,15 @@
         <state relative-caret-position="7021">
           <caret line="413" column="65" lean-forward="false" selection-start-line="413" selection-start-column="65" selection-end-line="413" selection-end-column="65" />
           <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#initTree#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#buildTree#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#initMenu#0;class#ConverterFrame#0" expanded="false" />
-            <element signature="method#initPanel#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#buildDesktop#0;class#ConverterFrame#0" expanded="false" />
+            <element signature="method#buildFrame#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#addMenuListeners#0;class#ConverterFrame#0" expanded="false" />
+            <element signature="method#addTreeListeners#0;class#ConverterFrame#0" expanded="false" />
+            <element signature="method#treeClicked#0;class#ConverterFrame#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -456,8 +462,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#6786#6787#0" expanded="true" />
-            <element signature="e#6830#6831#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -477,11 +482,15 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#initTree#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#buildTree#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#initMenu#0;class#ConverterFrame#0" expanded="false" />
-            <element signature="method#initPanel#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#buildDesktop#0;class#ConverterFrame#0" expanded="false" />
+            <element signature="method#buildFrame#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#addMenuListeners#0;class#ConverterFrame#0" expanded="false" />
+            <element signature="method#addTreeListeners#0;class#ConverterFrame#0" expanded="false" />
+            <element signature="method#treeClicked#0;class#ConverterFrame#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -491,11 +500,15 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#initTree#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#buildTree#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#initMenu#0;class#ConverterFrame#0" expanded="false" />
-            <element signature="method#initPanel#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#buildDesktop#0;class#ConverterFrame#0" expanded="false" />
+            <element signature="method#buildFrame#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#addMenuListeners#0;class#ConverterFrame#0" expanded="false" />
+            <element signature="method#addTreeListeners#0;class#ConverterFrame#0" expanded="false" />
+            <element signature="method#treeClicked#0;class#ConverterFrame#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -505,11 +518,15 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#initTree#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#buildTree#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#initMenu#0;class#ConverterFrame#0" expanded="false" />
-            <element signature="method#initPanel#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#buildDesktop#0;class#ConverterFrame#0" expanded="false" />
+            <element signature="method#buildFrame#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#addMenuListeners#0;class#ConverterFrame#0" expanded="false" />
+            <element signature="method#addTreeListeners#0;class#ConverterFrame#0" expanded="false" />
+            <element signature="method#treeClicked#0;class#ConverterFrame#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -539,11 +556,15 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#initTree#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#buildTree#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#initMenu#0;class#ConverterFrame#0" expanded="false" />
-            <element signature="method#initPanel#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#buildDesktop#0;class#ConverterFrame#0" expanded="false" />
+            <element signature="method#buildFrame#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#addMenuListeners#0;class#ConverterFrame#0" expanded="false" />
+            <element signature="method#addTreeListeners#0;class#ConverterFrame#0" expanded="false" />
+            <element signature="method#treeClicked#0;class#ConverterFrame#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -573,11 +594,15 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#initTree#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#buildTree#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#initMenu#0;class#ConverterFrame#0" expanded="false" />
-            <element signature="method#initPanel#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#buildDesktop#0;class#ConverterFrame#0" expanded="false" />
+            <element signature="method#buildFrame#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#addMenuListeners#0;class#ConverterFrame#0" expanded="false" />
+            <element signature="method#addTreeListeners#0;class#ConverterFrame#0" expanded="false" />
+            <element signature="method#treeClicked#0;class#ConverterFrame#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -607,11 +632,15 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#initTree#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#buildTree#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#initMenu#0;class#ConverterFrame#0" expanded="false" />
-            <element signature="method#initPanel#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#buildDesktop#0;class#ConverterFrame#0" expanded="false" />
+            <element signature="method#buildFrame#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#addMenuListeners#0;class#ConverterFrame#0" expanded="false" />
+            <element signature="method#addTreeListeners#0;class#ConverterFrame#0" expanded="false" />
+            <element signature="method#treeClicked#0;class#ConverterFrame#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -631,11 +660,15 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#initTree#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#buildTree#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#initMenu#0;class#ConverterFrame#0" expanded="false" />
-            <element signature="method#initPanel#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#buildDesktop#0;class#ConverterFrame#0" expanded="false" />
+            <element signature="method#buildFrame#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#addMenuListeners#0;class#ConverterFrame#0" expanded="false" />
+            <element signature="method#addTreeListeners#0;class#ConverterFrame#0" expanded="false" />
+            <element signature="method#treeClicked#0;class#ConverterFrame#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -812,7 +845,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="214" column="30" lean-forward="false" selection-start-line="214" selection-start-column="30" selection-end-line="214" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -913,25 +945,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ConverterFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+        <state relative-caret-position="2142">
+          <caret line="200" column="42" lean-forward="false" selection-start-line="200" selection-start-column="42" selection-end-line="200" selection-end-column="42" />
           <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#initTree#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#buildTree#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#initMenu#0;class#ConverterFrame#0" expanded="false" />
-            <element signature="method#initPanel#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#buildDesktop#0;class#ConverterFrame#0" expanded="false" />
+            <element signature="method#buildFrame#0;class#ConverterFrame#0" expanded="false" />
             <element signature="method#addMenuListeners#0;class#ConverterFrame#0" expanded="false" />
+            <element signature="method#addTreeListeners#0;class#ConverterFrame#0" expanded="false" />
+            <element signature="method#treeClicked#0;class#ConverterFrame#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/LongTask.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="142" column="74" lean-forward="false" selection-start-line="142" selection-start-column="74" selection-end-line="142" selection-end-column="74" />
+        <state relative-caret-position="1475">
+          <caret line="179" column="32" lean-forward="true" selection-start-line="179" selection-start-column="32" selection-end-line="179" selection-end-column="32" />
           <folding>
-            <element signature="e#6786#6787#0" expanded="true" />
-            <element signature="e#6830#6831#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

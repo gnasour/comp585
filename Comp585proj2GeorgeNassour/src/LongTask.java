@@ -4,10 +4,22 @@
  */
 //Swing components
 import java.util.StringTokenizer;
-import javax.swing.*;
+import javax.swing.JOptionPane;
+import javax.swing.JInternalFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import javax.swing.JFileChooser;
+import javax.swing.JProgressBar;
+import javax.swing.JFrame;
+import javax.swing.SwingWorker;
+import javax.swing.JPanel;
+import javax.swing.BorderFactory;
 //AWT components
 import java.awt.FlowLayout;
 import java.awt.Dimension;
+import java.awt.Color;
 import java.awt.BorderLayout;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -16,6 +28,7 @@ import java.io.File;
 import java.util.Scanner;
 import java.io.FileNotFoundException;
 import java.util.List;
+import javax.swing.border.Border;
 
 class LongTask extends JInternalFrame {
 
@@ -36,7 +49,7 @@ class LongTask extends JInternalFrame {
     private JFrame frame; // to properly center JDialogFrame
     private int numOfTimeProcessGotCalled;
     private Scanner scanner;
-    private String line, grepWord;
+    private String line, grepWord = "";
     private StringTokenizer st;
 
 
@@ -76,7 +89,7 @@ class LongTask extends JInternalFrame {
                         line = scanner.nextLine();
                         st = new StringTokenizer(line);
                         while(st.hasMoreTokens()){
-                            if(st.nextToken().equals("Hello")){
+                            if(st.nextToken().equals(grepWord)){
                                 grepResults.append(line + "\n");
                             }
                         }
@@ -141,6 +154,10 @@ class LongTask extends JInternalFrame {
     //Choosing a word to grep for
     private void chooseWord(){
         //Task: Create a text box for the user to enter a word to grep for
+
+        grepWord = JOptionPane.showInputDialog(this,"Enter a word you want to grep");
+
+
     }
 
 
@@ -153,6 +170,7 @@ class LongTask extends JInternalFrame {
         tf = new JTextField(35);
         grepResults = new JTextArea(RESULT_HEIGHT, RESULT_WIDTH);
         grepResults.setEditable(false);
+        grepResults.setBorder(BorderFactory.createLineBorder(Color.black));
         tf.setEditable(false);
         fileBtn = new JButton("...");
         readBtn = new JButton("Read");
