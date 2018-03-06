@@ -1,6 +1,10 @@
 /**
  * Long task class
  * Same one as in class, search line by line in a text file
+ * Using SwingWorker class to give illusion of a multithreaded program
+ * All tasks being processed are suspended and performed together under some
+ * arbitrary time. This allow many commands to be processed while the system
+ * breaks computation between actions queued up and actions processed.
  */
 //Swing components
 import java.awt.event.WindowEvent;
@@ -37,8 +41,10 @@ class LongTask extends JInternalFrame {
     private static final int RESULT_WIDTH = 58;
     private static final int RESULT_HEIGHT = 10;
 
+    //Singleton variable
     private static LongTask instance = null;
 
+    //Class variables
     private JLabel lbl, lbl2, grepLabel, progressLabel;
     private JTextField tf, grepText;
     private JTextArea grepResults;
@@ -53,6 +59,7 @@ class LongTask extends JInternalFrame {
     private StringTokenizer st;
 
 
+    //Singleton class decleration
     public static LongTask getInstance(JFrame frame) {
         if(instance == null) {
             instance = new LongTask(frame);
@@ -60,15 +67,18 @@ class LongTask extends JInternalFrame {
         return instance;
     }
 
-    private void checkIfClosed(){
 
-    }
-
-
+    /**
+     * Method that parses tasks on single thread.
+     * Runs when called by the execute method.
+     */
     class Task extends SwingWorker<Void, String> {
         /*
         * Main task. Executed in background thread.
-        *
+        * Recurse through the directory and subdirectories.
+        * Reads files and searches for the word specified by the user.
+        * Publishes the line of text that contains the user-specified word
+        * and is then sent to the process method to be printed on the results.
         */
         private void recurseThroughDirectories(File f){
             File root = new File( f.getAbsolutePath() );
@@ -133,6 +143,10 @@ class LongTask extends JInternalFrame {
 
         }
 
+        /**
+         * Takes the strings that pass the grep filter and appends them to the text area grepResults
+         * @param chunks
+         */
         @Override
         protected void process(List<String> chunks) {
             for(final String string:chunks){

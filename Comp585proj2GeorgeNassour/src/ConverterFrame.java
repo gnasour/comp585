@@ -30,6 +30,7 @@ import javax.swing.tree.DefaultTreeModel;
 
 class ConverterFrame extends JFrame {
 
+    //Frame variables
     private JDesktopPane desktop;
     private JPanel panel;
     private JScrollPane scrollPane;
@@ -98,7 +99,9 @@ class ConverterFrame extends JFrame {
         buildFrame();
     }
 
-    //Initialize the tree nodes and add them to a tree
+    /**
+     * Initialize the tree nodes and add a description to the nodes
+     */
     private void initTree(){
         tasksNode = new DefaultMutableTreeNode("Conversions");
         slowTaskNode = new DefaultMutableTreeNode("Slow Task");
@@ -129,6 +132,9 @@ class ConverterFrame extends JFrame {
         kilogramMeterToNewtonMeterNode = new DefaultMutableTreeNode("Kilogram/m to Newton/m");
     }
 
+    /**
+     * Add the nodes to the trees
+     */
     private void buildTree(){
         //Math
         mathNode.add(circleNode);
@@ -164,6 +170,9 @@ class ConverterFrame extends JFrame {
         tree = new JTree(treeModel);
     }
 
+    /**
+     * Initialize the menu items
+     */
     private void initMenu() {
         menuBar = new JMenuBar();
         app = new JMenu("App");
@@ -176,6 +185,9 @@ class ConverterFrame extends JFrame {
         menuBar.add(help);
     }
 
+    /**
+     * Initialize the panel items
+     */
     private void initPanel(){
         panel = new JPanel();
         splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT);
@@ -202,6 +214,9 @@ class ConverterFrame extends JFrame {
         labelPanel.add(statusLabel, BorderLayout.CENTER);
     }
 
+    /**
+     * Initialize the background of the right side in the scroll pane
+     */
     private void buildDesktop() {
         desktop = new JDesktopPane() {
             @Override
@@ -228,6 +243,9 @@ class ConverterFrame extends JFrame {
         };
     }
 
+    /**
+     * Initialize the frame of the GUI
+     */
     private void buildFrame() {
         setLayout(new BorderLayout());
         getContentPane().add(labelPanel, BorderLayout.SOUTH);
@@ -240,6 +258,9 @@ class ConverterFrame extends JFrame {
         setVisible(true);
     }
 
+    /**
+     * Add listeners to the menu
+     */
     private void addMenuListeners() {
 
         exit.addActionListener(new ActionListener() {
@@ -257,6 +278,10 @@ class ConverterFrame extends JFrame {
         });
 
     }
+
+    /**
+     * Add listeners to the tree nodes
+     */
     private void addTreeListeners() {
         tree.addMouseListener(new MouseAdapter() {
             @Override
@@ -269,6 +294,9 @@ class ConverterFrame extends JFrame {
         });
     }
 
+    /**
+     * Specify the action to be taken when clicked on a tree node
+     */
     private void treeClicked() {
         DefaultMutableTreeNode node = (DefaultMutableTreeNode) tree.getLastSelectedPathComponent();
         if(node != null && node.isLeaf()) {
@@ -423,10 +451,16 @@ class ConverterFrame extends JFrame {
         }
     }
 
+    /**
+     * Specify the action performed when clicking the exit button in the menu
+     */
     private void exitActionPerformed() {
         dispose();
     }
 
+    /**
+     * Specify the action performed when clicking the about button in the menu
+     */
     private void aboutActionPerformed() {
         JOptionPane.showMessageDialog(this, "Thx for using my app!");
     }
