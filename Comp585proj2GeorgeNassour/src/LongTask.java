@@ -1,4 +1,9 @@
 /**
+ * George Nassour
+ * Comp 585
+ * March 6 2018
+ * Sevak Asadorian
+ * Project 2
  * Long task class
  * Same one as in class, search line by line in a text file
  * Using SwingWorker class to give illusion of a multithreaded program

@@ -1,5 +1,9 @@
 /**
- * Created by George Nassour on 2/21/2018.
+ * George Nassour
+ * Comp 585
+ * March 6 2018
+ * Sevak Asadorian
+ * Project 2
  * Initial point of the project
  * Project uses Swing Worker to give the illusion of a multithreaded application
  * In reality, the GUI uses only one thread but swing worker assigns multiple tasks together using

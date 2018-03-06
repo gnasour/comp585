@@ -1,6 +1,11 @@
 /**
  * Created by George Nassour on 2/21/2018.
  * Building the frame and tree
+ * George Nassour
+ * Comp 585
+ * March 6 2018
+ * Sevak Asadorian
+ * Project 2
  */
 import java.awt.BorderLayout;
 import java.awt.Dimension;
