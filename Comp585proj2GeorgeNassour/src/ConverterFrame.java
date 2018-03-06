@@ -236,7 +236,7 @@ class ConverterFrame extends JFrame {
         setTitle("My App");
         setJMenuBar(menuBar);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(1000,750);
+        setSize(1100,750);
         setVisible(true);
     }
 
