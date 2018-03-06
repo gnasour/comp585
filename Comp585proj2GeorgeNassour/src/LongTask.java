@@ -58,6 +58,7 @@ class LongTask extends JInternalFrame {
     private Scanner scanner;
     private String line, grepWord = "";
     private StringTokenizer st;
+    private boolean oneMessage;
 
 
     //Singleton class decleration
@@ -118,7 +119,17 @@ class LongTask extends JInternalFrame {
 
                     }
                 }
+            } else {
+                //When cancelled the recursion will still run on the few saved cases
+                //This will cause the message dialog to only appear once
+                if(!oneMessage) {
+                    JOptionPane.showMessageDialog(frame, "Task cancelled prematurely");
+                    oneMessage = true;
+                }
+
+
             }
+
         }
 
 
@@ -222,6 +233,8 @@ class LongTask extends JInternalFrame {
         //stays the same whether or not the string is shown.
         progressBar.setStringPainted(false);
         fileName = "";
+        oneMessage = false;
+        task = new Task();
 
         fileBtn.setPreferredSize(new Dimension(20, 20));
         readBtn.setPreferredSize(new Dimension(80, 20));
@@ -277,7 +290,7 @@ class LongTask extends JInternalFrame {
                     grepChoice.setEnabled(false);
                     cancelButton.setEnabled(true);
                     grepResults.setText("");
-                    task = new Task();
+                    oneMessage = false;
                     task.execute();
                 }
             }
@@ -303,6 +316,11 @@ class LongTask extends JInternalFrame {
 
             @Override
             public void internalFrameClosing(InternalFrameEvent e) {
+                grepResults.setText("");
+                grepWord = "";
+                grepText.setText("");
+                tf.setText("");
+                fileName = "";
                 cancelTask();
             }
 
