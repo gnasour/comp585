@@ -94,7 +94,7 @@ class LongTask extends JInternalFrame {
                         st = new StringTokenizer(line);
                         while(st.hasMoreTokens()){
                             if(st.nextToken().equals(grepWord)){
-                                grepResults.append(line + "\n");
+                                publish(line);
                             }
                         }
                     }
@@ -135,6 +135,9 @@ class LongTask extends JInternalFrame {
 
         @Override
         protected void process(List<String> chunks) {
+            for(final String string:chunks){
+                grepResults.append(string + "\n");
+            }
         }
 
         /*
@@ -144,6 +147,8 @@ class LongTask extends JInternalFrame {
         public void done() {
             progressBar.setIndeterminate(false);
             readBtn.setEnabled(true);
+            grepChoice.setEnabled(true);
+            cancelButton.setEnabled(false);
             System.out.println("Done");
             progressBar.setVisible(false);
             progressLabel.setVisible(false);
@@ -222,6 +227,7 @@ class LongTask extends JInternalFrame {
         upperPanel.add(readBtn);
         upperPanel.add(grepChoice);
         upperPanel.add(cancelButton);
+        cancelButton.setEnabled(false);
 
         midPanel.add(progressLabel);
         midPanel.add(progressBar);
@@ -254,6 +260,8 @@ class LongTask extends JInternalFrame {
                     readBtn.setEnabled(false);
                     progressBar.setVisible(true);
                     progressLabel.setVisible(true);
+                    grepChoice.setEnabled(false);
+                    cancelButton.setEnabled(true);
                     grepResults.setText("");
                     task = new Task();
                     task.execute();
