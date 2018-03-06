@@ -196,6 +196,7 @@ class LongTask extends JInternalFrame {
     private LongTask(JFrame frame) {
 
         super("File Info", false, true, false, false);
+
         this.frame = frame;
         // init
         tf = new JTextField(35);
