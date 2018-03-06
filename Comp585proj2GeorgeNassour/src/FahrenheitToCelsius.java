@@ -71,7 +71,7 @@ class FahrenheitToCelsius extends JInternalFrame {
         label2.setText("");
         try {
             double fahrenheit = Double.parseDouble(textField.getText());
-            double answer = (fahrenheit-32)*(5/9);
+            double answer = ((fahrenheit-32)/9)*5;
             label2.setText(String.valueOf(answer) + " °C");
         }
         catch(NumberFormatException nfe) {
