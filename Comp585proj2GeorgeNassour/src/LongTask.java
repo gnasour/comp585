@@ -21,6 +21,8 @@ import javax.swing.JFrame;
 import javax.swing.SwingWorker;
 import javax.swing.JPanel;
 import javax.swing.BorderFactory;
+import javax.swing.event.InternalFrameEvent;
+import javax.swing.event.InternalFrameListener;
 //AWT components
 import java.awt.FlowLayout;
 import java.awt.Dimension;
@@ -28,7 +30,6 @@ import java.awt.Color;
 import java.awt.BorderLayout;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.awt.event.WindowListener;
 //Opening files and parsing strings
 import java.io.File;
 import java.util.Scanner;
@@ -81,46 +82,45 @@ class LongTask extends JInternalFrame {
         * and is then sent to the process method to be printed on the results.
         */
         private void recurseThroughDirectories(File f){
-            File root = new File( f.getAbsolutePath() );
-            File[] list = root.listFiles();
+            if(!isCancelled()) {
+                File root = new File(f.getAbsolutePath());
+                File[] list = root.listFiles();
 
 
+                if (list == null) return;
+                for (File fs : list) {
+                    if (fs.isDirectory()) {
+                        recurseThroughDirectories(fs);
+                        System.out.println("Dir:" + fs.getAbsoluteFile());
 
-            if (list == null) return;
-            for ( File fs : list ) {
-                if ( fs.isDirectory() ) {
-                    recurseThroughDirectories(fs);
-                    System.out.println( "Dir:" + fs.getAbsoluteFile() );
 
+                    } else if (fs.isFile()) {
+                        System.out.println("File:" + fs.getAbsolutePath());
+                        try {
 
-                }
-                else if (fs.isFile()){
-                    System.out.println("File:" + fs.getAbsolutePath());
-                    try{
-
-                    scanner = new Scanner(fs);
-                    while(scanner.hasNext()){
-                        line = scanner.nextLine();
-                        st = new StringTokenizer(line);
-                        while(st.hasMoreTokens()){
-                            if(st.nextToken().equals(grepWord)){
-                                publish(line);
+                            scanner = new Scanner(fs);
+                            while (scanner.hasNext()) {
+                                line = scanner.nextLine();
+                                st = new StringTokenizer(line);
+                                while (st.hasMoreTokens()) {
+                                    if (st.nextToken().equals(grepWord)) {
+                                        publish(line);
+                                    }
+                                }
                             }
+
+
+                        } catch (FileNotFoundException fnf) {
+                            System.out.println("The file selected was not found: " + fnf.toString());
+                        } catch (NullPointerException npe) {
+                            System.out.println("Null value while traversing through the files: " + npe.toString());
                         }
-                    }
 
-
-                }catch(FileNotFoundException fnf){
-                        System.out.println("The file selected was not found: " + fnf.toString());
                     }
-                    catch (NullPointerException npe){
-                        System.out.println("Null value while traversing through the files: " + npe.toString());
-                    }
-
                 }
             }
-
         }
+
 
 
         //Executing long task and updating progress bar
@@ -132,12 +132,7 @@ class LongTask extends JInternalFrame {
             }
             progressBar.setIndeterminate(true);
             lbl2.setText("");
-            cancelButton.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    cancel(true);
-                }
-            });
+
             recurseThroughDirectories(new File(fileName));
             return null;
 
@@ -168,6 +163,10 @@ class LongTask extends JInternalFrame {
             progressLabel.setVisible(false);
 
         }
+    }
+
+    private void cancelTask(){
+        task.cancel(true);
     }
 
     //Choosing a directory to descend through
@@ -290,8 +289,48 @@ class LongTask extends JInternalFrame {
                 chooseWord();
             }
         });
+        cancelButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cancelTask();
+            }
+        });
+        addInternalFrameListener(new InternalFrameListener() {
+            @Override
+            public void internalFrameOpened(InternalFrameEvent e) {
 
+            }
 
+            @Override
+            public void internalFrameClosing(InternalFrameEvent e) {
+                cancelTask();
+            }
+
+            @Override
+            public void internalFrameClosed(InternalFrameEvent e) {
+
+            }
+
+            @Override
+            public void internalFrameIconified(InternalFrameEvent e) {
+
+            }
+
+            @Override
+            public void internalFrameDeiconified(InternalFrameEvent e) {
+
+            }
+
+            @Override
+            public void internalFrameActivated(InternalFrameEvent e) {
+
+            }
+
+            @Override
+            public void internalFrameDeactivated(InternalFrameEvent e) {
+
+            }
+        });
 
 
 
@@ -299,6 +338,8 @@ class LongTask extends JInternalFrame {
         setBounds(25, 25, 800, 300);
         setLocation(50, 50);
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
+
     }
 
 

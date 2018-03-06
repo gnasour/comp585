@@ -41,10 +41,17 @@
       <file leaf-file-name="LongTask.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/LongTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="37" />
+            <state relative-caret-position="254">
+              <caret line="85" column="58" lean-forward="true" selection-start-line="85" selection-start-column="58" selection-end-line="85" selection-end-column="58" />
               <folding>
-                <element signature="e#0#10071#0" expanded="true" />
+                <element signature="e#0#11196#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#5554#5555#0" expanded="true" />
+                <element signature="e#5587#5588#0" expanded="true" />
+                <element signature="e#10098#10099#0" expanded="true" />
+                <element signature="e#10142#10143#0" expanded="true" />
+                <element signature="e#10414#10415#0" expanded="true" />
+                <element signature="e#10458#10459#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -70,6 +77,7 @@
       <find>File</find>
       <find>project</find>
       <find>dispose</find>
+      <find>task</find>
     </findStrings>
   </component>
   <component name="GradleLocalSettings">
@@ -418,7 +426,14 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#10071#0" expanded="true" />
+            <element signature="e#0#11196#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#5554#5555#0" expanded="true" />
+            <element signature="e#5587#5588#0" expanded="true" />
+            <element signature="e#10098#10099#0" expanded="true" />
+            <element signature="e#10142#10143#0" expanded="true" />
+            <element signature="e#10414#10415#0" expanded="true" />
+            <element signature="e#10458#10459#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -940,10 +955,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/LongTask.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="37" />
+        <state relative-caret-position="254">
+          <caret line="85" column="58" lean-forward="true" selection-start-line="85" selection-start-column="58" selection-end-line="85" selection-end-column="58" />
           <folding>
-            <element signature="e#0#10071#0" expanded="true" />
+            <element signature="e#0#11196#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#5554#5555#0" expanded="true" />
+            <element signature="e#5587#5588#0" expanded="true" />
+            <element signature="e#10098#10099#0" expanded="true" />
+            <element signature="e#10142#10143#0" expanded="true" />
+            <element signature="e#10414#10415#0" expanded="true" />
+            <element signature="e#10458#10459#0" expanded="true" />
           </folding>
         </state>
       </provider>
