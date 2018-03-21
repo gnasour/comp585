@@ -10,6 +10,8 @@ import javafx.beans.value.ObservableValue;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.io.RandomAccessFile;
+import java.io.File;
 
 public class Game {
 
@@ -18,6 +20,8 @@ public class Game {
 	public  String[] letterAndPosArray;
 	public  String[] mysteryWordArr;
 	private String[] words;
+	private RandomAccessFile dictionary_scanner;
+	private File dictionary_file;
 	public int moves;
 	private int index;
 	private boolean resetGame = false;
@@ -141,9 +145,22 @@ public class Game {
 		return gameStatus.get();
 	}
 
+	//GN -Pulling a random word from dictionary text file
 	private void setRandomWord() {
 		//int idx = (int) (Math.random() * words.length);
-		answer = "apple";//words[idx].trim(); // remove new line character
+		try {
+			dictionary_file = new File("src/dictionary/dictionary_full.txt");
+			dictionary_scanner = new RandomAccessFile(dictionary_file, "r");
+			final long randomLocation = (long) (Math.random() * dictionary_scanner.length());
+			dictionary_scanner.seek(randomLocation);
+			dictionary_scanner.readLine();
+			answer = dictionary_scanner.readLine();
+			System.out.print(answer);
+		}catch(FileNotFoundException fnf){
+			System.out.println(fnf.toString());
+		}catch(IOException ioe){
+			System.out.println(ioe.toString());
+		}
 	}
 
 	private void prepTmpAnswer() {
@@ -198,9 +215,12 @@ public class Game {
 
 	public void reset() {
 	    resetGame = true;
-        tmpAnswer = "";
-        index = 0;
-        moves = 0;
+		setRandomWord();
+		prepTmpAnswer();
+		prepLetterAndPosArray();
+		moves = 0;
+		gameState.setValue(false); // initial state
+		createGameStatusBinding();
 	}
 
 	private int numOfTries() {

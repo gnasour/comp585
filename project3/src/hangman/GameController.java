@@ -135,6 +135,7 @@ public class GameController {
 
 
 		dynamicString = ALPHABET;
+		alphabet.getChildren().clear();
 
 		for(int i = 0; i<ALPHABET.length(); i++) {
 			Text ascii = new Text(ALPHABET.charAt(i) + " ");
@@ -296,6 +297,7 @@ public class GameController {
 		drawHangman(7);
 		dynamicString = ALPHABET;
 		setUpStatusLabelBindings();
+		setAlphabet();
 		textField.setVisible(true);
 	}
 
