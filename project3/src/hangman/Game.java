@@ -1,5 +1,6 @@
 package hangman;
 
+
 import javafx.beans.Observable;
 import javafx.beans.binding.ObjectBinding;
 import javafx.beans.property.ObjectProperty;
@@ -12,6 +13,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.io.RandomAccessFile;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 public class Game {
 
@@ -147,7 +150,6 @@ public class Game {
 
 	//GN -Pulling a random word from dictionary text file
 	private void setRandomWord() {
-		//int idx = (int) (Math.random() * words.length);
 		try {
 			dictionary_file = new File("src/dictionary/dictionary_full.txt");
 			dictionary_scanner = new RandomAccessFile(dictionary_file, "r");
@@ -157,9 +159,9 @@ public class Game {
 			answer = dictionary_scanner.readLine();
 			System.out.print(answer);
 		}catch(FileNotFoundException fnf){
-			System.out.println(fnf.toString());
+			System.out.println("The file you specified was not found");
 		}catch(IOException ioe){
-			System.out.println(ioe.toString());
+			System.out.println("IO exception, maybe something entered was wrong?");
 		}
 	}
 
